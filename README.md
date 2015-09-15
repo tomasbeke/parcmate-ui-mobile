@@ -25,7 +25,7 @@ API (Google Maps, etc.) to be updated:
 API](https://developers.google.com/maps/documentation/javascript/)
 
 ### Dev tools
-```
+
 - [NPM](https://www.npmjs.com/)
 - [HARP](http://harpjs.com/)
 - [HARP Compass](https://github.com/harp/compass) (?)
@@ -34,4 +34,3 @@ API](https://developers.google.com/maps/documentation/javascript/)
 - [Foundation Angular](http://foundation.zurb.com/apps/docs/#!/angular)
   (?)
 - [Bootstrap Angular](https://angular-ui.github.io/bootstrap/) (?)
-```
