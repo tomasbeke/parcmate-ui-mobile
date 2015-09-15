@@ -17,9 +17,16 @@ be updated:
 
 Design definitions and guidelines to be updated:
 
-# APIs
+## APIs
 
 API (Google Maps, etc.) to be updated:
 
-[Google Maps JS
+- [Google Maps JS
 API](https://developers.google.com/maps/documentation/javascript/)
+
+### Dev tools
+
+- [HARP](http://harpjs.com/)
+- [HARP Compass](https://github.com/harp/compass) (?)
+- [HARP Flat UI](https://github.com/harp/flat-ui) (?)
+- [React Bootstrap](https://react-bootstrap.github.io/) (?) 
