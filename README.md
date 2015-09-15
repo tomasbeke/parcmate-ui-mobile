@@ -1,7 +1,7 @@
 # Parcmate UI mobile
 
 - [Dependencies](#dependencies)
-- [Style Definitions & Guidlines](#style-definition)
+- [Style Definitions](#style-definitions)
 - [APIs](#apis)
 
 ## Dependencies
@@ -13,7 +13,7 @@ be updated:
 - [Ratchet](http://goratchet.com/) (?)
 - [Foundation 4](http://foundation.zurb.com/) (?)
 
-## Style Definitions & Guidelines
+## Style Definitions
 
 Design definitions and guidelines to be updated:
 
