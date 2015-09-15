@@ -26,7 +26,10 @@ API](https://developers.google.com/maps/documentation/javascript/)
 
 ### Dev tools
 
+- [NPM](https://www.npmjs.com/)
 - [HARP](http://harpjs.com/)
 - [HARP Compass](https://github.com/harp/compass) (?)
 - [HARP Flat UI](https://github.com/harp/flat-ui) (?)
-- [React Bootstrap](https://react-bootstrap.github.io/) (?) 
+- [React Bootstrap](https://react-bootstrap.github.io/) (?)
+- [Foundation Angular](http://foundation.zurb.com/apps/docs/#!/angular)
+  (?)
