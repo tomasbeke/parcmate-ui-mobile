@@ -9,7 +9,7 @@
 List of dependencies (frameworks, libraries, utilities, tools, etc.) to
 be updated:
 
-- [Bootstrap](http://bootstrap.com/) (?)
+- [Bootstrap](http://getbootstrap.com/) (?)
 - [Ratchet](http://goratchet.com/) (?)
 - [Foundation 4](http://foundation.zurb.com/) (?)
 
