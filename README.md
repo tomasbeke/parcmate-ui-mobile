@@ -15,7 +15,13 @@ be updated:
 
 ## Style Definitions
 
-Design definitions and guidelines to be updated:
+Design definitions, BA guidelines, Jira issues to be updated:
+
+- [Jira](https://parcmate.atlassian.net/)
+- [Design
+  Docs](https://drive.google.com/folderview?id=0BxWzKe8reunNNS1tc2FBWkg3ckU&usp=drive_web&ddrp=1#)
+- [BA
+  Docs](https://drive.google.com/folderview?id=0Byz8qH47fbeFflFfemlqY1VsaUhsWnR5MldfT2hGeU9FMkRCWjJwQ2lyejcwLWo4cWZrdTA&usp=drive_web&ddrp=1)
 
 ## APIs
 
