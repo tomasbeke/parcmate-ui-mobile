@@ -32,6 +32,7 @@ API](https://developers.google.com/maps/documentation/javascript/)
 
 ### Dev tools
 
+- [CodeKit](http://incident57.com/codekit/)
 - [NPM](https://www.npmjs.com/)
 - [HARP](http://harpjs.com/)
 - [HARP Compass](https://github.com/harp/compass) (?)
