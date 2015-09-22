@@ -9,9 +9,12 @@
 List of dependencies (frameworks, libraries, utilities, tools, etc.) to
 be updated:
 
-- [Bootstrap](http://getbootstrap.com/) (?)
-- [Ratchet](http://goratchet.com/) (?)
-- [Foundation 4](http://foundation.zurb.com/) (?)
+- [Bootstrap](http://getbootstrap.com/)
+
+```
+Ratchet (-)
+Foundation 4 (-)
+```
 
 ## Style Definitions
 
@@ -33,11 +36,5 @@ API](https://developers.google.com/maps/documentation/javascript/)
 ### Dev tools
 
 - [CodeKit](http://incident57.com/codekit/)
-- [NPM](https://www.npmjs.com/)
-- [HARP](http://harpjs.com/)
-- [HARP Compass](https://github.com/harp/compass) (?)
-- [HARP Flat UI](https://github.com/harp/flat-ui) (?)
-- [React Bootstrap](https://react-bootstrap.github.io/) (?)
-- [Foundation Angular](http://foundation.zurb.com/apps/docs/#!/angular)
-  (?)
-- [Bootstrap Angular](https://angular-ui.github.io/bootstrap/) (?)
+- [Bootstrap-Stylus](https://github.com/maxmx/bootstrap-stylus/)
+- [Bootstrap-sass/Compass](https://github.com/twbs/bootstrap-sass/)
