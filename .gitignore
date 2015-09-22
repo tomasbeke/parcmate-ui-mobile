@@ -41,4 +41,4 @@ _components/
 bower_components/
 build/
 config.codekit
-index.html
+*.html
