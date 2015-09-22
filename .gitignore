@@ -39,4 +39,6 @@ Thumbs.db
 ########
 _components/
 bower_components/
+build/
 config.codekit
+index.html
