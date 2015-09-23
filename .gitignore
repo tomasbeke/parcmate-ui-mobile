@@ -42,3 +42,4 @@ bower_components/
 build/
 config.codekit
 *.html
+*.rb
