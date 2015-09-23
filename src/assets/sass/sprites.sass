@@ -1,3 +1,12 @@
 @import "compass/utilities/sprites"
 @import "sprite/*.png"
-@include all-sprite-sprites
+// width and height to bg-position
+@include all-sprite-sprites(true)
+// $<map>-spacing           // space in px around the sprites
+// $<map>-repeat            // whether to repeat the sprite bg
+// $<map>-position          // the x position of the sprite on the map
+// $<map>-sprite-base-class // the base class (default ".<map>-sprite")
+// $<map>-clean-up          // whether to delete old image maps
+// $<map>-<sprite>-spacing  // spacing, for individual sprites
+// $<map>-<sprite>-repeat   // repeat, for individual sprites
+// $<map>-<sprite>-position // position, for individual sprites
