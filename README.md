@@ -4,6 +4,8 @@
 - [Style Definitions](#style-definitions)
 - [APIs](#apis)
 
+All flat files contained in ``dist`` directory after build.
+
 ## Dependencies
 
 List of dependencies (frameworks, libraries, utilities, tools, etc.) to
