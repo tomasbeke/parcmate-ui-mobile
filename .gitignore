@@ -40,6 +40,6 @@ Thumbs.db
 _components/
 bower_components/
 build/
+src/assets/images/sprite-icons
 config.codekit
 *.html
-*.rb
