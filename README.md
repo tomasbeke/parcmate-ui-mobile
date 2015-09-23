@@ -38,8 +38,10 @@ API](https://developers.google.com/maps/documentation/javascript/)
 ### Dev tools
 
 - [CodeKit](http://incident57.com/codekit/)
-- [Bootstrap-Stylus](https://github.com/maxmx/bootstrap-stylus/)
-- [Bootstrap-sass/Compass](https://github.com/twbs/bootstrap-sass/)
+- [Bootstrap-Stylus](https://github.com/maxmx/bootstrap-stylus/) used to
+  replace SASS with Stylus in Bootstrap mixins
+- [Bootstrap-sass/Compass](https://github.com/twbs/bootstrap-sass/) used
+  for spriting only
 - [Flexbox Grid](http://flexboxgrid.com/) (?)
-- [Nib](http://tj.github.io/nib/)
-- Slim/Jeet (?)
+- [Nib](http://tj.github.io/nib/) used to extend Stylus mixins
+- Slim - templating
