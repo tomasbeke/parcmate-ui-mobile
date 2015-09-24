@@ -41,5 +41,6 @@ _components/
 bower_components/
 build/
 src/assets/images/sprite
-config.codekit
+*.codekit
+.codekit*
 *.html
