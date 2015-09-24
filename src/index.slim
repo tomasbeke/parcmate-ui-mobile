@@ -11,13 +11,6 @@ html lang='en'
     meta name="description" content=""
     / website stylesheets
     link href='build/assets/css/main.css' rel='stylesheet' type='text/css'
-    / scripts
-    script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'
-    script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js'
-    script src='bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js'
-    script src='bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js'
-    script src='bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
-    script src='build/assets/js/app.min.js'
 
   body[ng-app='parcMate' ng-colntroller='parcMateController' ui-prevent-touchmove-defaults]
     / Includes
@@ -31,13 +24,12 @@ html lang='en'
         nav.navbar.navbar-app.navbar-absolute-top
           .navbar-brand.navbar-brand-center[ui-yield-to='title']
             | Parcmate UI
-          .btn-group.pull-left
-            .btn.sidebar-toggle[ui-toggle="uiSidebarLeft"]
-              i.fa.fa-bars
-              |  Menu Left
+          / .btn-group.pull-left
+          /   .btn.sidebar-toggle[ui-toggle="uiSidebarLeft"]
+          /     i.fa.fa-bars
+          /     |  Menu Left
           .btn-group.pull-right
             .btn.sidebar-toggle[ui-toggle="uiSidebarRight"]
-              |  Menu Right 
               i.fa.fa-bars
       / App body
       main.app-body[ng-class="{loading: loading}"]
@@ -47,7 +39,8 @@ html lang='en'
           ng-view
       /Footer
       footer
-
-
-
-    / = javascript_include_tag
+      / Scripts
+      / Angular CDN [for testing]
+      script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'
+      script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js'
+      script src='build/assets/js/app.min.js'
