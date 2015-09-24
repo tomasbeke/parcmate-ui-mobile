@@ -12,8 +12,8 @@ app.run(function($transform) {
 });
 
 app.config(function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: '../../../home.html', reloadOnSearch: false});
-  $routeProvider.when('/tabs',          {templateUrl: '../../../tabs.html', reloadOnSearch: false});
+  $routeProvider.when('/build', {templateUrl: '../../../home.html', reloadOnSearch: false});
+  $routeProvider.when('/build/tabs', {templateUrl: '../../../tabs.html', reloadOnSearch: false});
 });
 
 app.controller('parcMateController', function ($rootScope, $scope) {

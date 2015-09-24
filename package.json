@@ -1,0 +1,19 @@
+{
+  "name": "parcmate-ui-mobile",
+  "version": "1.0.0",
+  "description": "parcmate mobile app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delibash/parcmate-ui-mobile.git"
+  },
+  "author": "delibash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delibash/parcmate-ui-mobile/issues"
+  },
+  "homepage": "https://github.com/delibash/parcmate-ui-mobile"
+}
