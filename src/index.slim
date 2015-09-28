@@ -32,11 +32,12 @@ html lang='en'
             .btn.sidebar-toggle[ui-toggle="uiSidebarRight"]
               i.fa.fa-bars
       / App body
-      main.app-body[ng-class="{loading: loading}"]
-        .app-content-loading[ng-show="loading"]
-          i.fa.fa-spinner.fa-spin.loading-spinner
-        .app-content
-          ng-view
+      main.scrollable
+        section.app-body[ng-class="{loading: loading}"]
+          .app-content-loading[ng-show="loading"]
+            i.fa.fa-spinner.fa-spin.loading-spinner
+          .app-content
+            ng-view
       /Footer
       footer
       / Scripts

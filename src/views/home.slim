@@ -1,20 +1,65 @@
-section.container
-  .row
-    .col-xs-12
-      / Parcmate Style Guide
-      / == yield
-      h1 Parcmate Header
-      h2 Parcmate Header
-      h3 Parcmate Header
-      h4 Parcmate Header
-      h5 Parcmate Header
-      h6 Parcmate Header
+.scrollable-content
+  .container
+    / Parcmate Style Guide
 
-      h3 Body Text
+    h1 Parcmate Header
+    h2 Parcmate Header
+    h3 Parcmate Header
+    h4 Parcmate Header
+    h5 Parcmate Header
+    h6 Parcmate Header
 
-      p.lead Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-      p Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-      p
-        mark marked text
-      p
-        strong bold text
+    h3 Paragraph Text
+
+    p.lead Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+    p Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+
+    h3 Colors
+    p Solid Colors
+    - for i in ['red', 'orange', 'blue']
+      div(class='bg-#{i}') #{i}
+      p(class='#{i}') #{i}
+
+    h3 Contextual Elements
+    p
+      mark mark
+    p
+      em em
+    p
+      span span
+    p
+      strong strong
+    p
+      blockquote blockquote
+    p
+      figcaption figcaption
+    p
+      pre pre
+    p
+      a(href='#') anchor
+    p
+      b bold
+    p
+      cite cite
+    p
+      code code
+    p
+      data data
+    p
+      dfn define
+    p
+      q quote
+    p
+      small small
+    p
+      sub sub
+    p
+      sup sup
+
+    h3 Buttons
+    - for i in ['default','primary', 'success', 'info', 'warning', 'danger']
+      button(type='button' class='btn btn-#{i}') Button #{i}
+
+    h3 Forms
+
+    h3 Tables
