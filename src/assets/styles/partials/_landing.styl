@@ -6,22 +6,25 @@
   background-attachment fixed
   text-align center
   font-size $font-size-large
-  font-weight 300
+  font-weight 400
   color #fff
 
   h1
     font-size $font-size-large
-    font-weight 300
+    font-weight 400
     margin 20px 0
 
   .landing-links
     padding 0 50px 50px
 
+    .row
+      &:nth-child(2)
+        .landing-act
+          height 100px
+
     .landing-act
-      position relative
       box-shadow 1px 0 0 0 #fff, 0 1px 0 0 #fff, 1px 1px 0 0 #fff, 1px 0 0 0 #fff inset, 0 1px 0 0 #fff inset
-      min-height 100px
-      overflow hidden
+      height 280px
 
       &:before
         content ' '
@@ -41,5 +44,19 @@
       a
         color #fff
         display block
+        width 100%
+        text-align center
         z-index 2
-        position relative
+        left 0
+        vertical-align(absolute)
+
+        span
+          width 100px
+          height 100px
+          display block
+          border 1px solid red
+          margin 0 auto 20px
+
+          &:after
+            content 'placeholder icon'
+            display block
