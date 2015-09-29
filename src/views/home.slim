@@ -16,7 +16,7 @@
 
     h3 Colors
     p Solid Colors
-    - for i in ['red', 'orange', 'blue']
+    - for i in ['red', 'orange', 'blue', 'black', 'gray']
       div(class='bg-#{i}') #{i}
       p(class='#{i}') #{i}
 
@@ -62,4 +62,7 @@
 
     h3 Forms
 
-    h3 Tables
+    form
+      .form-group
+        label(for='form field') Form Field
+        input(type='type' class='form-control' placeholder='Type')
