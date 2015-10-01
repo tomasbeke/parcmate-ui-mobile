@@ -4,10 +4,17 @@
   .scrollable-content
     .list-group ui-turn-off="uiSidebarRight"
       a.list-group-item href="#/"
+        | Landing
+      -for page in ['login']
+        a.list-group-item href="#/#{page}"
+          | #{page}
+      a.list-group-item href="#/style-guide"
         | Style Guide
         /i.fa.fa-chevron-left.pull-left
-      a.list-group-item href="#/landing"
-        | Landing Screen
+      / a.list-group-item href="#/landing"
+      /   | Landing Screen
+      / a.list-group-item href="#/login"
+      /   | Landing Screen
       /   i.fa.fa-chevron-right.pull-right
       / a.list-group-item href="#/toggle"
       /   | Toggle

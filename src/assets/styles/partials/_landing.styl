@@ -1,3 +1,4 @@
+// Main Screen
 .landing
   background-image url('../../assets/images/landing-bkg.jpg')
   background-repeat no-repeat
@@ -7,7 +8,48 @@
   text-align center
   font-size $font-size-large
   font-weight 400
-  color #fff
+  color $white
+
+  .container
+    padding 0 20px 20px
+
+    .error
+      display block
+      padding 15px
+
+    .row
+      &:nth-child(4)
+        span
+          padding 10px 0
+          display block
+          font-size $font-size-x-large
+
+    form
+      .form-group
+        margin-bottom 1px
+        height 75px
+        opacity .5
+        z-index 1
+    .forgot-credentials
+      padding 0 15px
+      div
+        padding 0
+        .label
+          display block
+          height 75px
+          line-height 75px
+          padding 0
+          font-size $font-size-large
+          background $black
+          border-left $white-border
+          border-bottom $white-border
+          border-radius 0
+        .btn
+          border-top 0
+          font-size $font-size-large
+        &:nth-child(2)
+          .btn
+            border-right 0
 
   h1
     font-size $font-size-large
@@ -15,8 +57,6 @@
     margin 20px 0
 
   .landing-links
-    padding 0 50px 50px
-
     .row
       &:nth-child(2)
         .landing-act
@@ -42,7 +82,7 @@
         background-size cover
 
       a
-        color #fff
+        color $white
         display block
         width 100%
         text-align center
@@ -60,3 +100,14 @@
           &:after
             content 'placeholder icon'
             display block
+  // Login
+
+  .login-call
+    color $white
+    display block
+    padding 15px 0
+    .fa
+      color $white
+
+.login
+  padding-top 50px

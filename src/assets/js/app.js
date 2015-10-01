@@ -12,8 +12,9 @@ app.run(function($transform) {
 });
 
 app.config(function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'style-guide.html', reloadOnSearch: false});
-  $routeProvider.when('/landing', {templateUrl: 'landing.html', reloadOnSearch: false});
+  $routeProvider.when('/', {templateUrl: 'landing.html', reloadOnSearch: false});
+  $routeProvider.when('/login', {templateUrl: 'login.html', reloadOnSearch: false});
+  $routeProvider.when('/style-guide', {templateUrl: 'style-guide.html', reloadOnSearch: false});
 });
 
 app.controller('parcMateController', function ($rootScope, $scope) {
