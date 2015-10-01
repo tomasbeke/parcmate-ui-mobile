@@ -1,0 +1,39 @@
+.scrollable-content.landing.login
+  .container
+    .row
+      .col-xs-12
+        a.login-call.action-call(href='#/')
+          | Login
+          i.fa.fa-chevron-left.pull-left
+    .row
+      .col-xs-12
+        span.error Email or password is incorrect
+    .row
+      .col-xs-12
+        form
+          div.form-group.row
+            label.col-xs-4 Email
+            div.col-xs-8
+              input.form-control(type='email' placeholder='Email')
+          div.form-group.row
+            label.col-xs-4 Password
+            div.col-xs-8
+              input.form-control(type='password' placeholder='Password')
+          button.btn.btn-large(type='submit' name='Login') Login
+      .col-xs-12
+        .row.forgot-credentials
+          .col-xs-4
+            span.label Forgot:
+          .col-xs-4
+            button.btn.btn-blue
+              span Email
+          .col-xs-4
+            button.btn.btn-blue
+              span Password
+    .row
+      .col-xs-12
+        span or
+    .row
+      .col-xs-12
+        button.btn.btn-blue(type='submit' name='Sign Up')
+          span Sign Up

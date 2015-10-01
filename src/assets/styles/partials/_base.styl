@@ -15,3 +15,65 @@
 
 html
   font-size $font-size-root
+
+a
+  color $blue
+
+// NavBar
+
+.navbar
+  position relative
+  min-height 50px
+  margin-bottom 20px
+  border $transparent-border
+
+.navbar-app
+  min-height 51px
+  border $gray-border
+  background #f7f7f7
+  color $blue
+
+.navbar-absolute-top
+.navbar-absolute-bottom
+  position absolute
+  z-index 1000
+  border-width 0
+  left 0
+  right 0
+  width 100%
+  margin 0
+
+.navbar-absolute-top
+  top 0
+  border-bottom-width 1px
+
+.navbar-brand
+  float left
+  padding 15px
+  font-size $font-size-large
+  height 50px
+  line-height inherit
+
+  span
+    font-weight 300
+    text-transform uppercase
+    &:nth-child(2)
+      font-weight 700
+
+.navbar-brand-left
+  text-align left
+  position absolute
+  width 100%
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+// Scrollable Content
+
+.scrollable-content
+  background-color $gray
+
+  .action-call
+    display block
+    padding 15px 0
+    clearfix()

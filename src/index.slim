@@ -19,19 +19,7 @@ html lang='en'
     .sidebar.sidebar-right[ng-include="'sidebar-right.html'" ui-track-as-search-param='true']
     / App wrapper
     .app
-      / Header
-      header
-        / navbars
-        nav.navbar.navbar-app.navbar-absolute-top
-          .navbar-brand.navbar-brand-center[ui-yield-to='title']
-            | Parcmate UI
-          / .btn-group.pull-left
-          /   .btn.sidebar-toggle[ui-toggle="uiSidebarLeft"]
-          /     i.fa.fa-bars
-          /     |  Menu Left
-          .btn-group.pull-right
-            .btn.sidebar-toggle[ui-toggle="uiSidebarRight"]
-              i.fa.fa-bars
+      include views/_navbar.slim
       / App body
       main.scrollable
         section.app-body[ng-class="{loading: loading}"]
