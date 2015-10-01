@@ -49,16 +49,31 @@ a
 
 .navbar-brand
   float left
-  padding 15px
-  font-size $font-size-large
-  height 50px
+  padding 0 15px
+  height 51px
   line-height inherit
 
-  span
+  h1
     font-weight 300
     text-transform uppercase
-    &:nth-child(2)
-      font-weight 700
+    margin 5px 0
+    font-size $font-size-large
+    clearfix()
+    .logo
+      width 36px
+      height 41px
+      background url('../../assets/images/logo-small.png')
+      background-size 36px 41px
+      background-repeat no-repeat
+    span
+      float left
+      margin-right 10px
+      &:nth-child(2)
+        margin-top 10px
+      i
+        font-style normal
+        &:nth-child(2)
+          font-weight 700
 
 .navbar-brand-left
   text-align left
