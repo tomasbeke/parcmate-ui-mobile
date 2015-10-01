@@ -9,20 +9,18 @@
   font-size $font-size-large
   font-weight 400
   color $white
-
-  .container
-    padding 0 20px 20px
-
-    .error
-      display block
-      padding 15px
-
+  &.login
     .row
       &:nth-child(4)
         span
           padding 10px 0
           display block
           font-size $font-size-x-large
+  .container
+
+    .error
+      display block
+      padding 15px
 
     form
       .form-group
@@ -98,13 +96,13 @@
           margin 0 auto 20px
 
           &:after
-            content 'placeholder icon'
+            content 'icon'
             display block
   // Login
 
   .login-call
     color $white
-    font-size $font-size-large
+    font-weight 700
     .fa
       color $white
 
