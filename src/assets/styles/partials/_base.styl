@@ -26,14 +26,14 @@ a
 
 .navbar
   position relative
-  min-height 50px
+  min-height 25px
   margin-bottom 20px
   border $transparent-border
 
 .navbar-app
-  min-height 51px
-  border $gray-border
-  background #f7f7f7
+  min-height 25px
+  border-bottom $gray-border
+  background $gray
   color $blue
 
 .navbar-absolute-top
@@ -53,14 +53,21 @@ a
 .navbar-brand
   float left
   padding 0 15px
-  height 51px
+  height 50px
   line-height inherit
 
   h1
     font-weight 300
     text-transform uppercase
-    margin 5px 0
+    margin-top 5px
+    padding-bottom 5px
+    padding-left 15px
+    background-color $gray
     font-size $font-size-large
+    width 200px
+    position absolute
+    left 0
+    border-bottom-right-radius 50px 50px
     clearfix()
     .logo
       width 36px
