@@ -22,8 +22,12 @@
 html
   font-size $font-size-root
 
-.container
-  padding-bottom 15px
+.app
+  background-color $white
+
+.app-content
+  position absolute
+  top 0
 
 a
   color $blue
@@ -102,7 +106,11 @@ a
 // Scrollable Content
 
 .scrollable-content
-  background-color $gray
+  background-color $white
+  .container
+    // for header
+    margin-top 50px
+    background-color $gray
   .action
     background-color $white
     box-shadow $box-shadow-gray
