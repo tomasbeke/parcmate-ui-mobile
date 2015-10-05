@@ -11,7 +11,7 @@
           .form-group.row
             label.col-xs-4 Mobile #
             .col-xs-8
-              input.form-control(type='phone' placeholder='Mobile')
+              input.form-control(type='tel' placeholder='Mobile' required)
           .form-group.row
             .col-xs-4.select-field.border-right
               select.form-control
@@ -19,5 +19,5 @@
                   option(value='#{i}')
                     | #{i}
             .col-xs-8
-              input.form-control(type='text' placeholder='License PLate')
-          button.btn.btn-default Send email
+              input.form-control(type='text' placeholder='License PLate' required)
+          button.btn.btn-default(type='submit' form='forgot-email') Send email
