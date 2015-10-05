@@ -14,6 +14,8 @@ app.run(function($transform) {
 app.config(function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'landing.html', reloadOnSearch: false});
   $routeProvider.when('/login', {templateUrl: 'login.html', reloadOnSearch: false});
+  $routeProvider.when('/forgot-email', {templateUrl: 'forgot-email.html', reloadOnSearch: false});
+  $routeProvider.when('/forgot-password', {templateUrl: 'forgot-password.html', reloadOnSearch: false});
   $routeProvider.when('/style-guide', {templateUrl: 'style-guide.html', reloadOnSearch: false});
 });
 

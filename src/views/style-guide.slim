@@ -62,12 +62,12 @@
         span Button #{i}
 
     p
-      a(href='#')
+      a.action-call(href='#')
         | Chevron Left
         i.fa.fa-chevron-left.pull-left
 
     p
-      a(href='#')
+      a.action-call(href='#')
         | Chevron Right
         i.fa.fa-chevron-right.pull-right
 
@@ -77,3 +77,6 @@
       .form-group
         label(for='form field') Form Field
         input(type='type' class='form-control' placeholder='Type')
+      .form-group
+        select.form-control
+          option 1
