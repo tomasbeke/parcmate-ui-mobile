@@ -20,4 +20,6 @@
                     | #{i} State
             .col-xs-8
               input.form-control(type='text' placeholder='License PLate' required)
-          button.btn.btn-default(type='submit' form='forgot-email') Send email
+          button.btn.btn-default(type='submit' form='forgot-email' ui-turn-on='modal1') Send email
+div(ui-content-for='modals')
+  div(ng-include="'modal.html'")
