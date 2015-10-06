@@ -22,7 +22,7 @@ app.config(function($routeProvider) {
 
   arr.forEach(function (el, i, array) {
     if (i === 0) {
-      $routeProvider.when('/', {templateUrl: 'landing.html', reloadOnSearch: false});
+      $routeProvider.when('/', {templateUrl: arr[0]+'.html', reloadOnSearch: false});
     } else {
       $routeProvider.when('/'+arr[i], {templateUrl: arr[i]+'.html', reloadOnSearch: false});
     }
