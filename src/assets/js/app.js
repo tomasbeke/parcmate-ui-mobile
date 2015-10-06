@@ -21,10 +21,12 @@ app.config(function($routeProvider) {
   ]
 
   arr.forEach(function (el, i, array) {
+    console.log(el, i, array)
+    console.log(el, array[i])
     if (i === 0) {
-      $routeProvider.when('/', {templateUrl: arr[0]+'.html', reloadOnSearch: false});
+      $routeProvider.when('/', {templateUrl: array[0]+'.html', reloadOnSearch: false});
     } else {
-      $routeProvider.when('/'+arr[i], {templateUrl: arr[i]+'.html', reloadOnSearch: false});
+      $routeProvider.when('/'+el, {templateUrl: el+'.html', reloadOnSearch: false});
     }
   });
 
