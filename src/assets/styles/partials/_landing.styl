@@ -56,14 +56,14 @@
 
   h1
     font-size $font-size-large
-    font-weight 400
+    font-weight $font-normal
     margin 20px 0
 
   .customer
     h1
-      font-size $font-sizex-large
+      font-size $font-size-large
       .name
-        font-weight 700
+        font-weight $font-bold
 
   .landing-links
     .row
@@ -123,7 +123,9 @@
 // Login
 .login
   padding-top 50px
-
+  .btn
+    &.sign-up
+      font-size $font-size-large
   .login-call
     color $white
     font-weight 700
