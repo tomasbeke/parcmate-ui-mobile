@@ -17,6 +17,7 @@ app.config(function($routeProvider) {
     'login',
     'forgot-email',
     'forgot-password',
+    'find-garage-base',
     'style-guide'
   ]
 
