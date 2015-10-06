@@ -12,11 +12,22 @@ app.run(function($transform) {
 });
 
 app.config(function($routeProvider) {
-  $routeProvider.when('/', {templateUrl: 'landing.html', reloadOnSearch: false});
-  $routeProvider.when('/login', {templateUrl: 'login.html', reloadOnSearch: false});
-  $routeProvider.when('/forgot-email', {templateUrl: 'forgot-email.html', reloadOnSearch: false});
-  $routeProvider.when('/forgot-password', {templateUrl: 'forgot-password.html', reloadOnSearch: false});
-  $routeProvider.when('/style-guide', {templateUrl: 'style-guide.html', reloadOnSearch: false});
+  var arr = [
+    'landing',
+    'login',
+    'forgot-email',
+    'forgot-password',
+    'style-guide'
+  ]
+
+  arr.forEach(function (el, i, array) {
+    if (i === 0) {
+      $routeProvider.when('/', {templateUrl: 'landing.html', reloadOnSearch: false});
+    } else {
+      $routeProvider.when('/'+arr[i], {templateUrl: arr[i]+'.html', reloadOnSearch: false});
+    }
+  });
+
 });
 
 app.controller('parcMateController', function ($rootScope, $scope) {
@@ -35,23 +46,23 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $rootScope.$on('$routeChangeSuccess', function(){
     $rootScope.loading = false;
   });
-
-  // Fake text i used here and there.
-  // $scope.lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo, aliquid eaque soluta nihil eligendi adipisci error, illum corrupti nam fuga omnis quod quaerat mollitia expedita impedit dolores ipsam. Obcaecati.';
-
-  //
-  // 'Scroll' screen
-  //
-  var scrollItems = [];
-
-  for (var i=1; i<=100; i++) {
-    scrollItems.push('Item ' + i);
-  }
-
-  $scope.scrollItems = scrollItems;
-
-  $scope.bottomReached = function() {
-    /* global alert: false; */
-    alert('Congrats you scrolled to the end of the list!');
-  };
+//
+//   // Fake text i used here and there.
+//   // $scope.lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo, aliquid eaque soluta nihil eligendi adipisci error, illum corrupti nam fuga omnis quod quaerat mollitia expedita impedit dolores ipsam. Obcaecati.';
+//
+//   //
+//   // 'Scroll' screen
+//   //
+//   var scrollItems = [];
+//
+//   for (var i=1; i<=100; i++) {
+//     scrollItems.push('Item ' + i);
+//   }
+//
+//   $scope.scrollItems = scrollItems;
+//
+//   $scope.bottomReached = function() {
+//     /* global alert: false; */
+//     alert('Congrats you scrolled to the end of the list!');
+//   };
 });
