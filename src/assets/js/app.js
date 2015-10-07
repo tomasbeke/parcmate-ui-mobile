@@ -22,11 +22,9 @@ app.config(function($routeProvider) {
   ]
 
   arr.forEach(function (el, i, array) {
-    if (i === 0) {
-      $routeProvider.when('/', {templateUrl: array[0]+'.html', reloadOnSearch: false});
-    } else {
-      $routeProvider.when('/'+el, {templateUrl: el+'.html', reloadOnSearch: false});
-    }
+    var root = '/'; 
+    root = el === 'landing' ? root : root + el
+    $routeProvider.when(root, {templateUrl: el+'.html', reloadOnSearch: false});
   });
 
 });
