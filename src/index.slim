@@ -1,5 +1,5 @@
 include views/_head.slim
-body[ng-app='parcMate' ng-colntroller='parcMateController' ui-prevent-touchmove-defaults]
+body (class='has-class-{{ state }}' ui-sref-active='mapBody' ng-app='parcMate' ng-controller='parcMateController' ui-prevent-touchmove-defaults)
   / Includes
   include views/_sidebar.slim
 
@@ -8,8 +8,8 @@ body[ng-app='parcMate' ng-colntroller='parcMateController' ui-prevent-touchmove-
   main.app
     / App body
     .scrollable
-      section.app-body[ng-class="{loading: loading}"]
-        .app-content-loading[ng-show="loading"]
+      section.app-body ng-class="{loading: loading}"
+        .app-content-loading(ng-show="loading")
         .app-content
           ng-view
   / Footer

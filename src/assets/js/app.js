@@ -7,6 +7,7 @@ var app = angular.module('parcMate', [
   'mobile-angular-ui',
   'mobile-angular-ui.gestures'
 ]);
+
 app.run(function($transform) {
   window.$transform = $transform;
 });
@@ -30,38 +31,20 @@ app.config(function($routeProvider) {
 });
 
 app.controller('parcMateController', function ($rootScope, $scope) {
+
   $scope.swiped = function(direction) {
     alert('Swiped ' + direction);
   };
-
   // User agent displayed in home page
   $scope.userAgent = navigator.userAgent;
 
   // Needed for the loading screen
-  $rootScope.$on('$routeChangeStart', function(){
+  $rootScope.$on('$routeChangeStart', function(e, toState){
     $rootScope.loading = true;
   });
-
-  $rootScope.$on('$routeChangeSuccess', function(){
+  $rootScope.$on('$routeChangeSuccess', function(e, toState){
+    var view = toState.$$route.originalPath.replace(/\//g, '');
+    $rootScope.state = view;
     $rootScope.loading = false;
   });
-//
-//   // Fake text i used here and there.
-//   // $scope.lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel explicabo, aliquid eaque soluta nihil eligendi adipisci error, illum corrupti nam fuga omnis quod quaerat mollitia expedita impedit dolores ipsam. Obcaecati.';
-//
-//   //
-//   // 'Scroll' screen
-//   //
-//   var scrollItems = [];
-//
-//   for (var i=1; i<=100; i++) {
-//     scrollItems.push('Item ' + i);
-//   }
-//
-//   $scope.scrollItems = scrollItems;
-//
-//   $scope.bottomReached = function() {
-//     /* global alert: false; */
-//     alert('Congrats you scrolled to the end of the list!');
-//   };
 });

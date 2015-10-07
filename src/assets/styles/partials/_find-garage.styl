@@ -16,7 +16,7 @@
   text-align center
   box-shadow $box-shadow-dark-top
   background $white
-  height 300px
+  height auto
   width 100%
   position absolute
   bottom 0
@@ -56,3 +56,14 @@
       > div
         > span
           display block
+      .type-of
+        border-bottom $white-border
+        margin 0 0 5px 0
+        padding 0 0 5px 0
+        .price
+          font-size $font-size-large
+          .amount
+            font-weight $font-bold
+      .location
+        .address
+          font-weight $font-bold
