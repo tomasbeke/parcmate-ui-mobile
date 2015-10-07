@@ -22,8 +22,8 @@ app.config(function($routeProvider) {
   ]
 
   arr.forEach(function (el, i, array) {
-    var root = '/'; 
-    root = el === 'landing' ? root : root + el
+    var root = '/';
+    root = (el === 'landing') ? root : root + el;
     $routeProvider.when(root, {templateUrl: el+'.html', reloadOnSearch: false});
   });
 
