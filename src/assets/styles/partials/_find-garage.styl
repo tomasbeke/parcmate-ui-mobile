@@ -22,8 +22,19 @@
   bottom 0
   z-index 1000
   .selectors
+    text-align center
     color $blue
-    span
-      margin-top 10px
-      font-size $font-size-large
-      display block
+    border-bottom $gray-border
+    .tabs
+      border-right $gray-border
+      min-height 60px
+      &:last-child
+        border none
+      select, input
+        font-size $font-size-large
+        color $blue
+        font-weight $font-bold
+      span
+        margin-top 5px
+        font-size $font-size-base
+        display block

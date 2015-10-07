@@ -1,17 +1,25 @@
 footer
   .container.garage-controls
     .row.selectors
-      .col-xs-4
-        span car
+      .col-xs-4.car-type-container.tabs
+        span
+          i.icon-angle-down
+          |  car
         select.car-type
-          - for car in ['car1', 'car2', 'car3']
+          - for car in ['Toyota', 'Lexus', 'Dodge']
             option value='#{car}' #{car}
-      .col-xs-4
-        span arrive by
+      .col-xs-4.arrive-by.tabs
+        span
+          i.icon-angle-down
+          |  arrive by
         input type='time' name='time'
-      .col-xs-4
-        span duration
-        input type='time'
+      .col-xs-4.duration.tabs
+        span
+          i.icon-angle-down
+          |  duration
+        select.time
+          - for time in (1..10)
+            option value='#{time}' #{time}h
 
     .row.options
 
