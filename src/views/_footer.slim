@@ -22,11 +22,16 @@ footer
             option value='#{time}' #{time}h
 
     .row.options
-      .col-xs-3.option
-        span.type
-        span.price
-          span.currency $
-          | 10
+      - for option in ['best', 'closest', 'cheapest', 'other']
+        .col-xs-3.option class='#{option}'
+          .type-of
+            span.type #{option}
+            span.price
+              span.currency $
+              | 10
+          .location
+            span.address 133 E. 61 St
+            span.rating stars
 
 div(ui-yield-to='modals')
 script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'

@@ -38,3 +38,21 @@
         margin-top 5px
         font-size $font-size-base
         display block
+  .options
+    .option
+      padding 5px 0
+      background $gray-light
+      color $white
+      font-weight $font-light
+      border-right $white-border
+      &:last-child
+        border 0 none
+      &.best
+        background $light-orange
+      &.closest
+        background $light-blue
+      &.cheapest
+        background $light-green
+      > div
+        > span
+          display block
