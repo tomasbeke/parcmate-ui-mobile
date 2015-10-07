@@ -7,9 +7,13 @@ $orange ?= #f15a24
 $blue ?= #0a5499
 $white ?= #fff
 $black ?= #000
-$gray ?= #eee
-$dark-gray ?= #888
+// $gray ?= #eee
+// $dark-gray ?= #888
 $transparent ?= transparent
+
+$light-orange ?= #f39331
+$light-blue ?= #40ACE2
+$light-green ?= #56B64A
 
 //== Typography
 //
@@ -45,10 +49,10 @@ $font-normal ?= 400
 $font-light ?= 300
 $font-thin ?= 100
 
-$white-border ?= 1px solid #fff
-$gray-border ?= 1px solid #eee
-$dark-gray-border ?= 1px solid #888
+$white-border ?= 1px solid $white
+$gray-border ?= 1px solid $gray-lighter
+$dark-gray-border ?= 1px solid $gray
 $transparent-border ?= 1px solid transparent
 
 $box-shadow-gray ?= 0 1px 1px #ccc
-$box-shadow-dark-top ?= 0 0 10px #000
+$box-shadow-dark-top ?= 0 0 10px $gray-base
