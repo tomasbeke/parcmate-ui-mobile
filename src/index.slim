@@ -4,13 +4,12 @@ body[ng-app='parcMate' ng-colntroller='parcMateController' ui-prevent-touchmove-
   include views/_sidebar.slim
 
   / App wrapper
-  .app
-    include views/_navbar.slim
+  include views/_navbar.slim
+  main.app
     / App body
-    main.scrollable
+    .scrollable
       section.app-body[ng-class="{loading: loading}"]
         .app-content-loading[ng-show="loading"]
-          i.fa.fa-spinner.fa-spin.loading-spinner
         .app-content
           ng-view
   / Footer

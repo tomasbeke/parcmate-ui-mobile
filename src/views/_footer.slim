@@ -1,5 +1,22 @@
+footer
+  .container.garage-controls
+    .row.selectors
+      .col-xs-4
+        span car
+        select.car-type
+          - for car in ['car1', 'car2', 'car3']
+            option value='#{car}' #{car}
+      .col-xs-4
+        span arrive by
+        input type='time' name='time'
+      .col-xs-4
+        span duration
+        input type='time'
+
+    .row.options
+
 div(ui-yield-to='modals')
 script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'
 script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-route.js'
 script src='assets/js/app.min.js'
-script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initMap'
+/script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initMap'
