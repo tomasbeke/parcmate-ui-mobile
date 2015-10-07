@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
     'login',
     'forgot-email',
     'forgot-password',
-    'find-garage-base',
+    'find-garage',
     'style-guide'
   ]
 
@@ -45,6 +45,16 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $rootScope.$on('$routeChangeSuccess', function(e, toState){
     var view = toState.$$route.originalPath.replace(/\//g, '');
     $rootScope.state = view;
+    if (view === 'find-garage') {
+      loadScripts('assets/js/maps.js');
+      loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initMap');
+    }
     $rootScope.loading = false;
   });
 });
+
+function loadScripts (src) {
+  var script = document.createElement('script');
+  script.src = src;
+  document.body.appendChild(script);
+}
