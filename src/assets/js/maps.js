@@ -3,7 +3,7 @@ var map;
 function initMap () {
   var mapOptions = {
     zoom : 8,
-    center : {lat: -34.397, lng: 150.644},
+    center : {lat: 40.748817, lng: -73.985428},
     mapTypeControl : false,
     streetViewControl : true,
     styleOptions : {
