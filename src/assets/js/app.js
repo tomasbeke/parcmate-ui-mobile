@@ -1,7 +1,7 @@
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
-// @codekit-append 'maps.js'
+
 var app = angular.module('parcMate', [
   'ngRoute',
   'mobile-angular-ui',
