@@ -22,16 +22,20 @@ footer
             option value='#{time}' #{time}h
 
     .row.options
-      - for option in ['best', 'closest', 'cheapest', 'other']
-        .col-xs-3.option class='#{option}'
-          .type-of
-            span.type #{option}
-            span.price
-              |$
-              span.amount 10
-          .location
-            span.address 133 E. 61 St
-            span.rating no rating
+      .scrollable-options.scrollable-content
+        / .col-xs-1.toggle
+        /   a.left(href='')
+        /     i.fa.fa-chevron-left
+        - for option in ['best', 'closest', 'cheapest', 'other', 'other', 'other', 'other']
+          .col-xs-3.option class='#{option}'
+            .type-of
+              span.type #{option}
+              span.price
+                |$
+                span.amount 10
+            .location
+              span.address 133 E. 61 St
+              span.rating no rating
 
 div(ui-yield-to='modals')
 script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js'

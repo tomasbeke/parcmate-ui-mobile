@@ -24,17 +24,18 @@
   position absolute
   bottom 0
   z-index 1000
+  padding 0
   .selectors
     text-align center
     color $blue
     border-bottom $gray-border
     .tabs
       border-right $gray-border
-      min-height 60px
+      min-height 50px
       &:last-child
         border none
       select, input
-        font-size $font-size-large
+        font-size $font-size-base
         color $blue
         font-weight $font-bold
       span
@@ -42,14 +43,36 @@
         font-size $font-size-base
         display block
   .options
+    width 100%
+    overflow-y hidden
+    overflow-x scroll
+    overflow-scrolling touch
+    height 123px
+    margin 0
+    background $gray
+    .scrollable-options
+      padding-right 0
+      background-color $gray
+      .toggle
+        height 123px
+        background $gray
+        padding 0
+        line-height 123px
+        width 40px
+        border-right $white-border
+        a
+          display block
+        i
+          color $white
     .option
+      width 110px
       padding 5px 0
       background $gray-light
       color $white
       font-weight $font-light
       border-right $white-border
-      &:last-child
-        border 0 none
+      // &:last-child
+      //   border 0 none
       &.best
         background $light-orange
       &.closest
@@ -64,7 +87,7 @@
         margin 0 0 5px 0
         padding 0 0 5px 0
         .price
-          font-size $font-size-large
+          font-size $font-size-x-large
           .amount
             font-weight $font-bold
       .location
