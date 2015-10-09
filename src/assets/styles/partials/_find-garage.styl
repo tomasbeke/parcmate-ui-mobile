@@ -43,6 +43,7 @@
         font-size $font-size-base
         display block
   .options
+    position relative
     width 100%
     overflow-y hidden
     overflow-x scroll
@@ -64,6 +65,11 @@
           display block
         i
           color $white
+        &.fixed
+          position fixed
+          left 0
+          bottom 0
+          z-index 100
     .option
       width 110px
       padding 5px 0
