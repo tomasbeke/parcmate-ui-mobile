@@ -20,6 +20,7 @@ var map = (function () {
     init : function () {
       map.setZoom();
       map.setStreetView();
+      map.setMapType();
       // Load Map
       var pcMap = new google.maps.Map(document.getElementById('map'), mapOptions);
     },
@@ -39,6 +40,7 @@ var map = (function () {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
       }
+      initMap(streetView);
     },
     setMapType : function () {
       var mapTypeControl = {
@@ -47,6 +49,7 @@ var map = (function () {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
       }
+      initMap(mapTypeControl);
     }
   }
 }());
