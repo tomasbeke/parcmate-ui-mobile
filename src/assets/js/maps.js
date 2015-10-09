@@ -1,4 +1,5 @@
-// Gmap Controls
+// GMap Controls
+
 var MapView = (function () {
   var mapOptions = {
     zoom : 15,
@@ -18,6 +19,7 @@ var MapView = (function () {
     }
     return mapOptions;
   }
+
   return {
     init : function () {
       var self = this;
@@ -29,7 +31,13 @@ var MapView = (function () {
       var renderZoomControls = self.setZoomControl(zoomDiv, self.pcMap);
       zoomDiv.index = 1;
 
+      // Render Map Locate Control
+      var locateDiv = document.createElement('div');
+      var renderLocateDiv = self.setLocateControl(locateDiv, self.pcMap);
+      locateDiv.index = 2;
+
       self.pcMap.controls[google.maps.ControlPosition.LEFT_CENTER].push(zoomDiv);
+      self.pcMap.controls[google.maps.ControlPosition.RIGHT_CENTER].push(locateDiv);
 
     },
     setZoomControl : function (div, map) {
@@ -84,6 +92,43 @@ var MapView = (function () {
        var currentZoomLevel = map.getZoom();
        if(currentZoomLevel != 21){
          map.setZoom(currentZoomLevel + 1);}
+      });
+    },
+    handleLocationError : function (browserHasGeolocation, locationMarker, pos) {
+      locationMarker.setPosition(pos);
+      //locationMarker.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
+    },
+    setLocateControl : function (div, map) {
+      var controlDiv = div;
+      // Set CSS for the controls.
+      controlDiv.style.margin = '-200px 15px 0 0';
+      controlDiv.style.cursor = 'pointer';
+      controlDiv.style.backgroundImage = "url(/build/assets/images/logo-small.png)";
+      controlDiv.style.backgroundRepeat = "no-repeat";
+      controlDiv.style.height = '64px';
+      controlDiv.style.width = '56px';
+      // Event Listener for getting current location
+      google.maps.event.addDomListener(controlDiv, 'click', function (e) {
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            }
+            map.setCenter(pos);
+            // Create Marker
+            var locationMarker = new google.maps.Marker({
+              position : pos,
+              map : map
+            });
+          }, function () {
+            self.handleLocationError(true, locationMarker, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          self.handleLocationError(false, locationMarker, map.getCenter());
+        }
       });
     }
   }
