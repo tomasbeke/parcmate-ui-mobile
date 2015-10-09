@@ -42,7 +42,7 @@ var map = (function () {
     },
     setMapType : function () {
       var mapTypeControl = {
-        mapTypeControl : true;
+        mapTypeControl : true,
         mapTypeControlOptions : {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
