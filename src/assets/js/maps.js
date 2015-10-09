@@ -1,22 +1,56 @@
-var map;
-
-function initMap () {
+// Gmap Controls
+var map = (function () {
   var mapOptions = {
     zoom : 15,
-    center : {lat: 40.748817, lng: -73.985428},
-    // Street View
-    streetViewControl : true,
-    streetViewControlOptions : {},
-    // Zoom Control
-    zoomControl: true,
-    zoomControlOptions : {},
-    // Map Type Control
-    mapTypeControl: true,
-    mapTypeControlOptions : {},
-    // scaleControl: true,
-    // streetViewControl: true,
-    // rotateControl : true
-    //disableDefaultUI : true
+    center : {lat: 40.748817, lng: -73.985428}
   }
-  map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  function initMap (obj) {
+    for (var key in mapOptions) {
+      if (obj) {
+        for (var val in obj) {
+          key = val;
+          mapOptions[key] = obj[val];
+        }
+      }
+    }
+    console.log(mapOptions)
+    return mapOptions;
+  }
+  return {
+    init : function () {
+      map.setZoom();
+      map.setStreetView();
+      // Load Map
+      var pcMap = new google.maps.Map(document.getElementById('map'), mapOptions);
+    },
+    setZoom : function () {
+      var zoomObj = {
+        zoomControl : true,
+        zoomControlOptions : {
+          position : google.maps.ControlPosition.LEFT_CENTER
+        }
+      }
+      initMap(zoomObj);
+    },
+    setStreetView : function () {
+      var streetView = {
+        streetViewControl : true,
+        streetViewControlOptions : {
+          position : google.maps.ControlPosition.LEFT_CENTER
+        }
+      }
+    },
+    setMapType : function () {
+      var mapTypeControl = {
+        mapTypeControl : true;
+        mapTypeControlOptions : {
+          position : google.maps.ControlPosition.LEFT_CENTER
+        }
+      }
+    }
+  }
+}());
+
+function initGMap () {
+  map.init();
 }
