@@ -52,7 +52,7 @@ app.controller('parcMateController', function ($rootScope, $scope) {
       loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initGMap');
     }
     $rootScope.loading = false;
-    initHelpers();
+    // initHelpers();
   });
 });
 

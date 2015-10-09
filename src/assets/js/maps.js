@@ -1,6 +1,8 @@
 // GMap Controls
 
 var MapView = (function () {
+  'use strict';
+
   var mapOptions = {
     zoom : 15,
     center : {lat: 40.748817, lng: -73.985428},
