@@ -45,41 +45,26 @@ var MapView = (function () {
       // Set CSS for the controls.
       controlDiv.style.margin = '-200px 0 0 15px';
       controlDiv.style.cursor = 'pointer';
-      controlDiv.style.border = "1px solid #000"
-      controlDiv.style.opacity = "0.9";
-      controlDiv.style.backgroundColor = "transparent";
-      controlDiv.style.height = '100px';
-      controlDiv.style.width = '100px';
+      controlDiv.style.height = '26px';
+      controlDiv.style.width = '54px';
 
-      var zoomout = document.createElement('div');
-      zoomout.title = 'Click to zoom out';
-      zoomout.style.display = "inline-block"
-      zoomout.style.borderRight = "1px solid #000"
-      zoomout.style.width = '50%';
-      zoomout.style.height = '100%';
-      controlDiv.appendChild(zoomout);
-
-      var zoomoutText = document.createElement('div');
-      zoomoutText.innerHTML = '<strong>-</strong>';
-      zoomoutText.style.fontSize = '30px';
-      zoomoutText.style.marginTop = '3px';
-      zoomoutText.style.textAlign = 'center';
-      zoomoutText.style.color = "#9e9e9e"
-      zoomout.appendChild(zoomoutText);
+      controlDiv.className = 'sprite sprite-check-in-out'
 
       var zoomin = document.createElement('div');
       zoomin.title = 'Click to zoom in';
       zoomin.style.display = "inline-block"
       zoomin.style.width = '50%';
       zoomin.style.height = '100%';
+
       controlDiv.appendChild(zoomin);
 
-      var zoominText = document.createElement('div');
-      zoominText.innerHTML = '<strong>+</strong>';
-      zoominText.style.fontSize = '30px';
-      zoominText.style.textAlign = 'center';
-      zoominText.style.color = "#9e9e9e"
-      zoomin.appendChild(zoominText);
+      var zoomout = document.createElement('div');
+      zoomout.title = 'Click to zoom out';
+      zoomout.style.display = "inline-block"
+      zoomout.style.width = '50%';
+      zoomout.style.height = '100%';
+
+      controlDiv.appendChild(zoomout);
 
       // Setup the click event listeners for zoom-in, zoom-out:
       google.maps.event.addDomListener(zoomout, 'click', function() {
@@ -103,10 +88,11 @@ var MapView = (function () {
       // Set CSS for the controls.
       controlDiv.style.margin = '-200px 15px 0 0';
       controlDiv.style.cursor = 'pointer';
-      controlDiv.style.backgroundImage = "url(/build/assets/images/logo-small.png)";
       controlDiv.style.backgroundRepeat = "no-repeat";
-      controlDiv.style.height = '64px';
-      controlDiv.style.width = '56px';
+      controlDiv.style.height = '31px';
+      controlDiv.style.width = '31px';
+      // Sprite Class
+      controlDiv.className = 'sprite sprite-locate-me'
       // Event Listener for getting current location
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         // Try HTML5 geolocation.
