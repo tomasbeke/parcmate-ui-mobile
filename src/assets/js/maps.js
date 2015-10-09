@@ -4,7 +4,7 @@ var map = (function () {
     zoom : 15,
     center : {lat: 40.748817, lng: -73.985428}
   }
-  function initMap (obj) {
+  function setMapObject (obj) {
     for (var key in mapOptions) {
       if (obj) {
         for (var val in obj) {
@@ -31,7 +31,7 @@ var map = (function () {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
       }
-      initMap(zoomObj);
+      setMapObject(zoomObj);
     },
     setStreetView : function () {
       var streetView = {
@@ -40,7 +40,7 @@ var map = (function () {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
       }
-      initMap(streetView);
+      setMapObject(streetView);
     },
     setMapType : function () {
       var mapTypeControl = {
@@ -49,7 +49,7 @@ var map = (function () {
           position : google.maps.ControlPosition.LEFT_CENTER
         }
       }
-      initMap(mapTypeControl);
+      setMapObject(mapTypeControl);
     }
   }
 }());
