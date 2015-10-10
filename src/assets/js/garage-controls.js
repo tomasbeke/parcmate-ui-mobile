@@ -25,7 +25,9 @@ var GarageControls = (function (self, $) {
     init : function () {
       self = this;
       self.setControlsContainer();
-      self.setControlsState();
+      $(window).on('resize', function () {
+        self.setControlsContainer();
+      });
     },
     setControlsContainer : function () {
       var view = $('.scrollable-options');
@@ -40,6 +42,7 @@ var GarageControls = (function (self, $) {
       view.width(itemCount*itemWidth);
       // set width
       view.width();
+      self.setControlsState();
     },
     setControlsState : function () {
       self = this;
