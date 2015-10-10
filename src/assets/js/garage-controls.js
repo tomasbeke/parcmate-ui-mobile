@@ -1,4 +1,4 @@
-// Mock/prototype behavior for control scroll.
+// Mock/prototype behavior for control kinetic scroll.
 
 // Called in app.js
 var GarageControls = (function (self, $) {
