@@ -9,13 +9,20 @@ var GarageControls = (function (self, $) {
   'use strict';
 
   var self,
-      container,
+      view,
       min,
       max,
       offset,
       reference,
       pressed,
-      xtransform;
+      xtransform,
+      velocity,
+      amplitude,
+      frame,
+      timestamp,
+      ticker,
+      target,
+      timeConstant;
 
   var controlsSettings = {
     container : document.getElementById('scrollable-options')
@@ -30,8 +37,7 @@ var GarageControls = (function (self, $) {
       });
     },
     setControlsContainer : function () {
-      var view = $('.scrollable-options');
-
+      view = $('.scrollable-options');
       var items = view.children('.option'),
           itemCount,
           itemWidth;
@@ -46,7 +52,7 @@ var GarageControls = (function (self, $) {
     },
     setControlsState : function () {
       self = this;
-      container = controlsSettings.container;
+      var container = controlsSettings.container;
       if (typeof window.ontouchstart !== undefined) {
         container.addEventListener('touchstart', self.tap);
         container.addEventListener('touchmove', self.drag);
@@ -73,11 +79,33 @@ var GarageControls = (function (self, $) {
 
     tap : function (e) {
       $('#map').html(e.type);
+
       pressed = true;
       reference = self.xPosition(e);
+      // velocity = amplitude = 0;
+      // frame = offest;
+      // timestamp = Date.now();
+      // clearInterval(ticker);
+      // ticker.setInterval(self.track, 100);
+
       e.preventDefault();
       e.stopPropagation();
       return false;
+    },
+    track : function () {
+      var now,
+          elapsed,
+          delta,
+          v;
+      now = Date.now();
+      elapsed = now - timestamp;
+      timestamp = now;
+      delta = offset - frame;
+      frame = offset;
+
+      v = 1000 * delta / (1 + elapsed);
+      velocity = 0.8 * v + 0.2 * velocity;
+
     },
     drag : function (e) {
       var x, delta;
