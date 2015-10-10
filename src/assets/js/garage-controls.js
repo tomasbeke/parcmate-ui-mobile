@@ -3,7 +3,9 @@
 // Called in app.js
 var GarageControls = (function (self, $) {
 
-  var controlsObj = {}
+  var controlsSettings = {
+    container : $('.scrollable-options')
+  }
 
   return {
     init : function () {
@@ -11,17 +13,19 @@ var GarageControls = (function (self, $) {
       self.setControlsContainer();
     },
     setControlsContainer : function () {
-      var itemsContainer = $('.scrollable-options'),
-          items = itemsContainer.children('.option'),
+      var container = controlsSettings.container,
+          items = container.children('.option'),
           itemCount,
           itemWidth;
       $.each(items, function (i, v) {
         itemCount = i+1,
         itemWidth = $(v).outerWidth();
       });
-      itemsContainer.width(itemCount*itemWidth);
+      container.width(itemCount*itemWidth);
       // set width
-      itemsContainer.width();
+      container.width();
+    },
+    setControlsState : function () {
     }
   }
 
