@@ -1,4 +1,6 @@
 // Mock/prototype behavior for control kinetic scroll.
+// Scroll based on Ariya Hidayat kinetic scroll algorithm
+// http://ariya.ofilabs.com/2013/08/javascript-kinetic-scrolling-part-1.html
 
 // Called in app.js
 var GarageControls = (function (self, $) {
@@ -10,56 +12,98 @@ var GarageControls = (function (self, $) {
       max,
       offset,
       reference,
-      pressed;
+      pressed,
+      xtransform;
 
   var controlsSettings = {
-    container : $('.scrollable-options')
+    container : document.getElementById('scrollable-options')
   }
 
   return {
     init : function () {
       self = this;
       self.setControlsContainer();
+      self.setControlsState();
     },
     setControlsContainer : function () {
-      container = controlsSettings.container;
-      var items = container.children('.option'),
+      var view = $('.scrollable-options');
+
+      var items = view.children('.option'),
           itemCount,
           itemWidth;
       $.each(items, function (i, v) {
         itemCount = i+1,
         itemWidth = $(v).outerWidth();
       });
-      container.width(itemCount*itemWidth);
+      view.width(itemCount*itemWidth);
       // set width
-      container.width();
+      view.width();
     },
     setControlsState : function () {
       self = this;
       container = controlsSettings.container;
       if (typeof window.ontouchstart !== undefined) {
-        alert('true')
-        container.on('touchstart', self.tap);
-        container.on('touchmove', self.drag);
-        container.on('touchend', self.release);
+        container.addEventListener('touchstart', self.tap);
+        container.addEventListener('touchmove', self.drag);
+        container.addEventListener('touchend', self.release);
       }
-      container.on('mousedown', self.tap);
-      container.on('mousemove', self.drag);
-      container.on('mouseup', self.release);
+      container.addEventListener('mousedown', self.tap);
+      container.addEventListener('mousemove', self.drag);
+      container.addEventListener('mouseup', self.release);
+
+      max = parseInt(getComputedStyle(container).width, 10) - innerWidth;
+      offset = min = 0;
+      pressed = false;
+      // Adjust container postion with CSS3 transform
+      xtransform = 'transform';
+      ['webkit', 'Moz', 'O', 'ms'].every(function (prefix) {
+          var e = prefix + 'Transform';
+          if (typeof container.style[e] !== 'undefined') {
+              xtransform = e;
+              return false;
+          }
+          return true;
+      });
     },
 
-    tap : function () {},
-    drag : function () {},
-    release : function () {},
-
+    tap : function (e) {
+      $('#map').html(e.type);
+      pressed = true;
+      reference = self.xPosition(e);
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    },
+    drag : function (e) {
+      var x, delta;
+      if (pressed) {
+          x = self.xPosition(e);
+          delta = reference - x;
+          if (delta > 2 || delta < -2) {
+              reference = x;
+              self.xScroll(offset + delta);
+          }
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    },
+    release : function (e) {
+      $('#map').html(e.type);
+      pressed = false;
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    },
     xPosition : function (e) {
       if (e.targetTouches && (e.targetTouches.length >= 1)) {
         return e.targetTouches[0].clientX;
       }
     },
     xScroll : function (x) {
-      offest = (x > max) ? (x < min) ? min : x;
-      container.style[xform] = 'translateX(' + (-offset) + 'px)';
+      offset = (x > max) ? max : (x < min) ? min : x;
+      container.style[xtransform] = 'translateX(' + (-offset) + 'px)';
+      $('#map').html(x)
     }
   }
 
