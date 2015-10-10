@@ -2,6 +2,8 @@
 // Scroll based on Ariya Hidayat kinetic scroll algorithm
 // http://ariya.ofilabs.com/2013/08/javascript-kinetic-scrolling-part-1.html
 
+// TODO: jQuery Kinetic Plugin http://davetayls.me/jquery.kinetic/
+
 // Called in app.js
 var GarageControls = (function (self, $) {
   'use strict';
