@@ -1,7 +1,7 @@
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
-// @codekit-prepend '../../../bower_components/jquery/dist/jquery.js'
+// @codekit-prepend '../../../bower_components/jquery/dist/jquery.min.js'
 // @codekit-append 'map-controls.js'
 
 var app = angular.module('parcMate', [
@@ -47,12 +47,12 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $rootScope.$on('$routeChangeSuccess', function(e, toState){
     var view = toState.$$route.originalPath.replace(/\//g, '');
     $rootScope.state = view;
-    if (view === 'find-garage') {
-      loadScripts('assets/js/maps.js');
-      loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initGMap');
-    }
+    // if (view === 'find-garage') {
+    //   loadScripts('assets/js/maps.js');
+    //   loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initGMap');
+    // }
     $rootScope.loading = false;
-    // initHelpers();
+    GarageControls.init();
   });
 });
 
