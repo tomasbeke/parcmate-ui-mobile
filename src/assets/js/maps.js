@@ -146,6 +146,7 @@ var MapView = (function () {
       // Add events
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         console.log(e)
+        alert('Search Control')
       });
     },
     setFilterControl : function (div, map) {
@@ -161,6 +162,7 @@ var MapView = (function () {
       // Add events
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         console.log(e)
+        alert('Filter Control')
       });
     }
   }
