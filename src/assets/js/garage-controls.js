@@ -22,7 +22,9 @@ var GarageControls = (function (self, $) {
       ticker,
       amplitude,
       target,
-      timeConstant;
+      timeConstant,
+      count,
+      snap;
 
 
   var controlsSettings = {
@@ -68,6 +70,12 @@ var GarageControls = (function (self, $) {
       offset = min = 0;
       pressed = false;
       timeConstant = 325;
+
+      // Get snap point
+      snap = parseInt(getComputedStyle(document.getElementById('options-offset')).width, 10);
+      count = 143;
+      max = (count - 5) * snap;
+
       // Adjust container postion with CSS3 transform
       xtransform = 'transform';
       ['webkit', 'Moz', 'O', 'ms'].every(function (prefix) {
@@ -124,15 +132,18 @@ var GarageControls = (function (self, $) {
       return false;
     },
     release : function (e) {
-      $('#map').html(e.type);
       pressed = false;
       clearInterval(ticker);
+      target = offset;
       if (velocity > 10 || velocity < -10) {
-          amplitude = 0.8 * velocity;
-          target = Math.round(offset + amplitude);
-          timestamp = Date.now();
-          requestAnimationFrame(self.autoScroll);
+        amplitude = 0.8 * velocity;
+        target = offset + amplitude;
       }
+      target = Math.round(target / snap) * snap;
+      amplitude = target - offset;
+      timestamp = Date.now();
+      requestAnimationFrame(self.autoScroll);
+      $('#map').html(snap+'this is snap');
       e.preventDefault();
       e.stopPropagation();
       return false;
