@@ -1,0 +1,73 @@
+@import "compass";
+//@import "sprite/normal/*.png";
+
+@mixin bp-retina {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+$naviconsNormal: sprite-map("sprite/normal/*.png", $spacing: 10px);
+$naviconsRetina: sprite-map("sprite/retina/*.png", $spacing: 20px);
+
+.sprite {
+  background-image: $naviconsNormal;
+  background-repeat: no-repeat;
+  display: inline-block; // or block
+  @include bp-retina {
+    background-image: $naviconsRetina;
+    background-repeat: no-repeat;
+    //Instead of sprite-path might be sprite-url
+    @include background-size(image-width(sprite-path($naviconsNormal)) image-height(sprite-path($naviconsNormal)));
+  }
+}
+
+@each $i in sprite_names($naviconsNormal){
+  .sprite-#{$i}{
+    background-position: sprite-position($naviconsNormal, $i);
+    @include sprite-dimensions($naviconsNormal, $i);
+  }
+}
+@include bp-retina {
+  @each $i in sprite_names($naviconsNormal){
+    .sprite-#{$i}{
+      $ypos: round(nth(sprite-position($naviconsRetina, $i), 2) / 2);
+      background-position: 0 $ypos;
+    }
+  }
+}
+
+// Sprite Style Guide
+// $i: 0;
+// @each $icon, $content in sprite_names($naviconsNormal) {
+//  $i: $i + 1;
+//  .styleguide .icons li:nth-child(#{$i}) {
+//     &:before {
+//     content: ‘’;
+//     @extend .icn;
+//     @extend .icn-#{$icon};
+//     display: inline-block;}
+//  &:after {
+//    content: ‘icon-#{$icon}’;
+//    padding-left:10px;
+//    display: inlin-block;
+//   }
+//  }
+// }
+
+// width and height to bg-position
+// @include all-normal-sprites(true);
+// $<map>-spacing           // space in px around the sprites
+// $<map>-repeat            // whether to repeat the sprite bg
+// $<map>-position          // the x position of the sprite on the map
+// $<map>-sprite-base-class // the base class (default ".<map>-sprite")
+// $<map>-clean-up          // whether to delete old image maps
+// $<map>-<sprite>-spacing  // spacing, for individual sprites
+// $<map>-<sprite>-repeat   // repeat, for individual sprites
+// $<map>-<sprite>-position // position, for individual sprites
