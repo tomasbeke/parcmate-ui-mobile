@@ -38,8 +38,20 @@ var MapView = (function () {
       var renderLocateDiv = self.setLocateControl(locateDiv, self.pcMap);
       locateDiv.index = 2;
 
+      // Render Search Control
+      var searchControlDiv = document.createElement('div');
+      var renderSearchControlDiv = self.setSearchControl(searchControlDiv, self.pcMap);
+      locateDiv.index = 3;
+
+      // Render Filter Control
+      var filterControlDiv = document.createElement('div');
+      var renderFilterControlDiv = self.setFilterControl(filterControlDiv, self.pcMap);
+      locateDiv.index = 3;
+
       self.pcMap.controls[google.maps.ControlPosition.LEFT_CENTER].push(zoomDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_CENTER].push(locateDiv);
+      self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
+      self.pcMap.controls[google.maps.ControlPosition.RIGHT_CENTER].push(filterControlDiv);
 
     },
     setZoomControl : function (div, map) {
@@ -117,6 +129,36 @@ var MapView = (function () {
           // Browser doesn't support Geolocation
           self.handleLocationError(false, locationMarker, map.getCenter());
         }
+      });
+    },
+    setSearchControl : function (div, map) {
+      var controlDiv = div;
+      // Set CSS for search icon control
+      controlDiv.style.margin = '190px 15px 0 0';
+      controlDiv.style.cursor = 'pointer';
+      controlDiv.style.backgroundRepeat = "no-repeat";
+      controlDiv.style.height = '31px';
+      controlDiv.style.width = '31px';
+      // Sprite Class
+      controlDiv.className = 'sprite sprite-search-glass';
+      // Add events
+      google.maps.event.addDomListener(controlDiv, 'click', function (e) {
+        console.log(e)
+      });
+    },
+    setFilterControl : function (div, map) {
+      var controlDiv = div;
+      // Set CSS for search icon control
+      controlDiv.style.margin = '10px 15px 0 0';
+      controlDiv.style.cursor = 'pointer';
+      controlDiv.style.backgroundRepeat = "no-repeat";
+      controlDiv.style.height = '31px';
+      controlDiv.style.width = '27px';
+      // Sprite Class
+      controlDiv.className = 'sprite sprite-filter-big-blue';
+      // Add events
+      google.maps.event.addDomListener(controlDiv, 'click', function (e) {
+        console.log(e)
       });
     }
   }
