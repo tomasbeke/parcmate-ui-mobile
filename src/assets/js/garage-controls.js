@@ -77,14 +77,16 @@ var GarageControls = (function (self, $) {
       container.addEventListener('mouseup', self.release);
 
       max = parseInt(getComputedStyle(container).width, 10) - innerWidth;
+      // resize max on window resize
       offset = min = 0;
       pressed = false;
       timeConstant = 325;
 
       // Get snap point
       snap = parseInt(getComputedStyle(document.getElementsByClassName('option')[0]).width, 10);
-      count = 143;
-      max = (count - 5) * snap;
+
+      count = document.getElementsByClassName('option').length;
+      max = (count/2) * snap;
 
       // Adjust container postion with CSS3 transform
       xtransform = 'transform';
@@ -183,7 +185,6 @@ var GarageControls = (function (self, $) {
     // Set toggle position
     togglePosition : function () {
       $('.options').on('scroll', function (e) {
-        console.log(e)
       });
     }
   }

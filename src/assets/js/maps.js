@@ -121,7 +121,7 @@ var MapView = (function () {
     }
   }
 }());
-
+// Called in app.js loadScripts
 function initGMap () {
   MapView.init();
 }
