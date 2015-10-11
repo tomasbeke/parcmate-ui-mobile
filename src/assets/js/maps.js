@@ -8,8 +8,7 @@ var MapView = (function () {
     center : {lat: 40.748817, lng: -73.985428},
     disableDefaultUI : true
   }
-  // Set Controls Object
-  var controlsOptions = {};
+
   // Function for pushing necessary
   // default values to map options object
   function setMapObject (obj) {
@@ -137,7 +136,7 @@ var MapView = (function () {
     setSearchControl : function (div, map) {
       var controlDiv = div;
       // Set CSS for search icon control
-      controlDiv.style.margin = '70px 15px 0 0';
+      controlDiv.style.margin = '75px 15px 0 0';
       controlDiv.style.cursor = 'pointer';
       controlDiv.style.backgroundRepeat = "no-repeat";
       controlDiv.style.height = '31px';
