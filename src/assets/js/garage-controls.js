@@ -72,7 +72,7 @@ var GarageControls = (function (self, $) {
       timeConstant = 325;
 
       // Get snap point
-      snap = parseInt(getComputedStyle(document.getElementById('options-offset')).width, 10);
+      snap = parseInt(getComputedStyle(document.getElementsByClassName('option')[0]).width, 10);
       count = 143;
       max = (count - 5) * snap;
 
