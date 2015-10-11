@@ -40,6 +40,18 @@ html
   min-height 15px
   margin-bottom 20px
   border $transparent-border
+  // Hide on Landing & Display on Find Garage
+  .hamburger-menu
+    .btn
+      height auto
+    display none
+    position absolute
+    left 15px
+    top 60px
+    .fa-bars
+      font-size 3rem
+      &:before
+        content '\f0c9'
 
 .navbar-app
   min-height 15px

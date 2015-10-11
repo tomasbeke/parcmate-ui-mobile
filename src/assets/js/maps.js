@@ -8,6 +8,8 @@ var MapView = (function () {
     center : {lat: 40.748817, lng: -73.985428},
     disableDefaultUI : true
   }
+  // Set Controls Object
+  var controlsOptions = {};
   // Function for pushing necessary
   // default values to map options object
   function setMapObject (obj) {
@@ -33,31 +35,32 @@ var MapView = (function () {
       var renderZoomControls = self.setZoomControl(zoomDiv, self.pcMap);
       zoomDiv.index = 1;
 
-      // Render Map Locate Control
-      var locateDiv = document.createElement('div');
-      var renderLocateDiv = self.setLocateControl(locateDiv, self.pcMap);
-      locateDiv.index = 2;
-
       // Render Search Control
       var searchControlDiv = document.createElement('div');
       var renderSearchControlDiv = self.setSearchControl(searchControlDiv, self.pcMap);
+      searchControlDiv.index = 2;
+
+      // Render Map Locate Control
+      var locateDiv = document.createElement('div');
+      var renderLocateDiv = self.setLocateControl(locateDiv, self.pcMap);
       locateDiv.index = 3;
+
 
       // Render Filter Control
       var filterControlDiv = document.createElement('div');
       var renderFilterControlDiv = self.setFilterControl(filterControlDiv, self.pcMap);
-      locateDiv.index = 3;
+      locateDiv.index = 4;
 
-      self.pcMap.controls[google.maps.ControlPosition.LEFT_CENTER].push(zoomDiv);
-      self.pcMap.controls[google.maps.ControlPosition.RIGHT_CENTER].push(locateDiv);
+      self.pcMap.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomDiv);
+      self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(locateDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
-      self.pcMap.controls[google.maps.ControlPosition.RIGHT_CENTER].push(filterControlDiv);
+      self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(filterControlDiv);
 
     },
     setZoomControl : function (div, map) {
       var controlDiv = div;
       // Set CSS for the controls.
-      controlDiv.style.margin = '-200px 0 0 15px';
+      controlDiv.style.margin = '120px 0 0 15px';
       controlDiv.style.cursor = 'pointer';
       controlDiv.style.height = '26px';
       controlDiv.style.width = '54px';
@@ -100,7 +103,7 @@ var MapView = (function () {
     setLocateControl : function (div, map) {
       var controlDiv = div;
       // Set CSS for the controls.
-      controlDiv.style.margin = '-200px 15px 0 0';
+      controlDiv.style.margin = '25px 15px 0 0';
       controlDiv.style.cursor = 'pointer';
       controlDiv.style.backgroundRepeat = "no-repeat";
       controlDiv.style.height = '31px';
@@ -134,7 +137,7 @@ var MapView = (function () {
     setSearchControl : function (div, map) {
       var controlDiv = div;
       // Set CSS for search icon control
-      controlDiv.style.margin = '190px 15px 0 0';
+      controlDiv.style.margin = '70px 15px 0 0';
       controlDiv.style.cursor = 'pointer';
       controlDiv.style.backgroundRepeat = "no-repeat";
       controlDiv.style.height = '31px';
@@ -149,7 +152,7 @@ var MapView = (function () {
     setFilterControl : function (div, map) {
       var controlDiv = div;
       // Set CSS for search icon control
-      controlDiv.style.margin = '10px 15px 0 0';
+      controlDiv.style.margin = '25px 15px 0 0';
       controlDiv.style.cursor = 'pointer';
       controlDiv.style.backgroundRepeat = "no-repeat";
       controlDiv.style.height = '31px';
