@@ -40,6 +40,15 @@ var GarageControls = (function (self, $) {
       });
     },
     setControlsContainer : function () {
+      // Add third item as toggle column
+      // TODO: Come up with better way; temp.
+      // var html = '<div class="col-xs-1 option toggle"><a href="#"><i class="fa fa-chevron-left"></i></a></div>';
+      // $('.scrollable-options .option').map(function (i) {
+      //   if (i === 2) {
+      //     $(this).after(html)
+      //   }
+      // });
+
       var view = $('.scrollable-options');
 
       var items = view.children('.option'),
@@ -52,15 +61,6 @@ var GarageControls = (function (self, $) {
       view.width(itemCount*itemWidth);
       // set width
       view.width();
-
-      // Add third item as toggle
-      // TODO: Come up with better way; temp.
-      var html = '<div class="col-xs-1 toggle"><a href="#"><i class="fa fa-chevron-left"></i></a></div>';
-      $('.scrollable-options .option').map(function (i) {
-        if (i === 2) {
-          $(this).after(html)
-        }
-      });
 
       self.setControlsState();
     },
