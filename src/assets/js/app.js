@@ -2,7 +2,6 @@
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
 // @codekit-prepend '../../../bower_components/jquery/dist/jquery.min.js'
-// @codekit-append 'garage-controls.js'
 
 var app = angular.module('parcMate', [
   'ngRoute',
@@ -49,6 +48,7 @@ app.controller('parcMateController', function ($rootScope, $scope) {
     $rootScope.state = view;
     if (view === 'find-garage') {
       loadScripts('assets/js/maps.js');
+      loadScripts('assets/js/garage-controls.js');
       loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initGMap');
     }
     $rootScope.loading = false;
@@ -60,8 +60,3 @@ function loadScripts (src) {
   script.src = src;
   document.body.appendChild(script);
 }
-
-// Init Garage Controls
-$(function () {
-  GarageControls.init();
-});

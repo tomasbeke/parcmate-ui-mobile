@@ -189,3 +189,11 @@ var GarageControls = (function (self, $) {
   }
 
 }(this, $));
+
+
+// Init Garage Controls
+$(function () {
+  if (GarageControls !== undefined) {
+    GarageControls.init();
+  }
+});
