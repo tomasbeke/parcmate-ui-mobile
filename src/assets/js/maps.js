@@ -3,9 +3,11 @@
 var MapView = (function () {
   'use strict';
 
+  var initPosition = {lat: 40.748817, lng: -73.985428}
+
   var mapOptions = {
     zoom : 15,
-    center : {lat: 40.748817, lng: -73.985428},
+    center : initPosition,
     disableDefaultUI : true
   }
 
@@ -55,6 +57,40 @@ var MapView = (function () {
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(filterControlDiv);
 
+      self.setMarkers(self.pcMap);
+
+    },
+    // Markers
+    setMarkers : function (map) {
+      var self = this;
+      var iconsPath = 'assets/images/map-icons/';
+      // Set multiple markers
+      var icons = {
+        current : iconsPath + 'pin-current-location.png',
+        best : iconsPath + 'pin-best-orange.png',
+        closest : iconsPath + 'pin-closet-baby-blue.png',
+        cheapest : iconsPath + 'pin-cheapest-green.png',
+        other : iconsPath + 'pin-other-gray.png',
+        parked : iconsPath + 'pin-parked-blue.png',
+        findGarage : iconsPath + 'pin-find-garage-blue.png'
+      }
+
+      // TODO: Multiple Featured Markers
+
+      var markerCurrentLocation = new google.maps.Marker({
+        position: mapOptions.center,
+        map: map,
+        icon: iconsPath + 'pin-current-location.png'
+      });
+
+      markerCurrentLocation.setMap(map)
+    },
+    addMarkers : function (feature, icons) {
+      var marker = new google.maps.Marker({
+        position: feature.position,
+        icon: icons[feature.type].icon,
+        map: map
+      });
     },
     setZoomControl : function (div, map) {
       var controlDiv = div;
@@ -122,7 +158,8 @@ var MapView = (function () {
             // Create Marker
             var locationMarker = new google.maps.Marker({
               position : pos,
-              map : map
+              map : map,
+              icon : 'assets/images/map-icons/pin-current-location.png'
             });
           }, function () {
             self.handleLocationError(true, locationMarker, map.getCenter());
