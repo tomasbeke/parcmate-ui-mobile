@@ -16,7 +16,9 @@ app.run(function($transform) {
 app.config(function($routeProvider) {
   var arr = [
     'landing',
+    'landing-signedin',
     'login',
+    'login-error',
     'forgot-email',
     'forgot-password',
     'find-garage',
