@@ -52,6 +52,16 @@ var GarageControls = (function (self, $) {
       view.width(itemCount*itemWidth);
       // set width
       view.width();
+
+      // Add third item as toggle
+      // TODO: Come up with better way; temp.
+      var html = '<div class="col-xs-1 toggle"><a href="#"><i class="fa fa-chevron-left"></i></a></div>';
+      $('.scrollable-options .option').map(function (i) {
+        if (i === 2) {
+          $(this).after(html)
+        }
+      });
+
       self.setControlsState();
     },
     setControlsState : function () {
@@ -86,10 +96,10 @@ var GarageControls = (function (self, $) {
           }
           return true;
       });
+      self.togglePosition();
     },
 
     tap : function (e) {
-      $('#map').html(e.type);
       pressed = true;
       reference = self.xPosition(e);
 
@@ -143,7 +153,6 @@ var GarageControls = (function (self, $) {
       amplitude = target - offset;
       timestamp = Date.now();
       requestAnimationFrame(self.autoScroll);
-      $('#map').html(snap+'this is snap');
       e.preventDefault();
       e.stopPropagation();
       return false;
@@ -156,7 +165,6 @@ var GarageControls = (function (self, $) {
     xScroll : function (x) {
       offset = (x > max) ? max : (x < min) ? min : x;
       container.style[xtransform] = 'translateX(' + (-offset) + 'px)';
-      $('#map').html(x)
     },
     autoScroll : function () {
       var elapsed,
@@ -171,6 +179,12 @@ var GarageControls = (function (self, $) {
             self.xScroll(target);
         }
       }
+    },
+    // Set toggle position
+    togglePosition : function () {
+      $('.options').on('scroll', function (e) {
+        console.log(e)
+      });
     }
   }
 
