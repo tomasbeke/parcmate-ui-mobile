@@ -28,7 +28,8 @@ var GarageControls = (function (self, $) {
 
 
   var controlsSettings = {
-    container : document.getElementById('scrollable-options')
+    container : document.getElementById('scrollable-options'),
+    optionsContainer : $('.options')
   }
 
   return {
@@ -99,6 +100,7 @@ var GarageControls = (function (self, $) {
           return true;
       });
       self.togglePosition();
+      self.triggerClick();
     },
 
     tap : function (e) {
@@ -184,8 +186,18 @@ var GarageControls = (function (self, $) {
     },
     // Set toggle position
     togglePosition : function () {
-      $('.options').on('scroll', function (e) {
+      var self = this;
+      controlsSettings.optionsContainer.on('scroll', function (e) {
+        console.debug(e.type+' triggered');
       });
+    },
+    // Register even on garage item scroll
+    triggerClick : function () {
+      var self = this;
+      $('.option', controlsSettings.optionsContainer).on('click', function (e) {
+        console.debug(e.type+' click');
+        $(this).addClass('selected').siblings().removeClass('selected')
+      })
     }
   }
 
