@@ -196,7 +196,8 @@ var GarageControls = (function (self, $) {
           childPosL = c.children().position().left;
       var togglePosL = $('.toggle', c).position().left,
           cPosR = c.outerWidth();
-      // TODO: Fix incorrect calculation
+      // TODO 1: Fix incorrect calculation
+      // TODO 2: Update toggle for mobile 
       // Test positions for scroll
       // & add position/change direction
       console.log('||||||||||||||||||||||||')
