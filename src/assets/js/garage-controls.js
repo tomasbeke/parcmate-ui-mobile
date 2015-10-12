@@ -40,7 +40,9 @@ var GarageControls = (function (self, $) {
         self.setControlsContainer();
       });
       // Set without outside controls setControlsState
-      self.togglePosition();
+      if (!$('.toggle').length) {
+        self.togglePosition();
+      }
     },
     setControlsContainer : function () {
       var view = $('.scrollable-options');
@@ -54,7 +56,7 @@ var GarageControls = (function (self, $) {
       });
       // Set width & account for toggle width
       // TODO: Update width dynamically: check width on ready
-      view.width(itemCount*itemWidth-70);
+      view.width(itemCount*itemWidth);
 
       self.setControlsState();
     },
@@ -194,6 +196,7 @@ var GarageControls = (function (self, $) {
           childPosL = c.children().position().left;
       var togglePosL = $('.toggle', c).position().left,
           cPosR = c.outerWidth();
+      // TODO: Fix incorrect calculation
       // Test positions for scroll
       // & add position/change direction
       console.log('||||||||||||||||||||||||')
