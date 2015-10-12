@@ -39,17 +39,10 @@ var GarageControls = (function (self, $) {
       $(window).on('resize', function () {
         self.setControlsContainer();
       });
+      // Set without outside controls setControlsState
+      self.togglePosition();
     },
     setControlsContainer : function () {
-      // Add third item as toggle column
-      // TODO: Come up with better way; temp.
-      // var html = '<div class="col-xs-1 option toggle"><a href="#"><i class="fa fa-chevron-left"></i></a></div>';
-      // $('.scrollable-options .option').map(function (i) {
-      //   if (i === 2) {
-      //     $(this).after(html)
-      //   }
-      // });
-
       var view = $('.scrollable-options');
 
       var items = view.children('.option'),
@@ -59,9 +52,8 @@ var GarageControls = (function (self, $) {
         itemCount = i+1,
         itemWidth = $(v).outerWidth();
       });
-      view.width(itemCount*itemWidth);
-      // set width
-      view.width();
+      // Set width & account for toggle width
+      view.width(itemCount*itemWidth-70);
 
       self.setControlsState();
     },
@@ -99,7 +91,6 @@ var GarageControls = (function (self, $) {
           }
           return true;
       });
-      self.togglePosition();
       self.triggerControlItemClick();
     },
 
@@ -186,14 +177,49 @@ var GarageControls = (function (self, $) {
     },
     // Set toggle position
     togglePosition : function () {
-      var self = this;
+      var self = this,
+          html = '<div class="col-xs-1 toggle"><a href="" class="left"><i class="fa fa-chevron-left"></i></a></div>';
+      // Set third item as toggle
+      $('.option:eq(2)',controlsSettings.optionsContainer).after(html);
+      // Update toggle position on scroll
       controlsSettings.optionsContainer.on('scroll', function (e) {
-        console.debug(e.type+' triggered');
+        //console.debug(e.type+' triggered');
+        self.updateTogglePosition(e);
       });
+    },
+    updateTogglePosition : function (e) {
+      var toggle = $('.toggle', c);
+      var c = controlsSettings.optionsContainer,
+          childPosL = c.children().position().left;
+      var togglePosL = $('.toggle', c).position().left,
+          cPosR = c.outerWidth();
+      // Test positions for scroll
+      // & add position/change direction
+      console.log('||||||||||||||||||||||||')
+      console.log('toggle pos: '+togglePosL)
+      console.log('child pos: '+childPosL)
+      console.log('container pos R: '+cPosR)
+      console.log('child pos L + container pos R +: '+(childPosL+cPosR))
+      console.log('child pos L + container pos R -: '+(-(childPosL+cPosR)) )
+
+      if (childPosL <= -(childPosL+cPosR)) {
+        toggle
+          .addClass('fixed')
+          .find('.fa')
+          .removeClass('fa-chevron-left')
+          .addClass('fa-chevron-right');
+      } else {
+        toggle
+          .removeClass('fixed')
+          .find('.fa')
+          .removeClass('fa-chevron-right')
+          .addClass('fa-chevron-left');
+      }
     },
     // Register even on garage item scroll
     triggerControlItemClick : function () {
       var self = this;
+
       var items = document.getElementsByClassName('option'),
           item;
       // For mobile
@@ -201,14 +227,14 @@ var GarageControls = (function (self, $) {
         for (var i = 0; i < items.length; i++) {
           item = items[i];
           item.addEventListener('touchstart', function (e) {
-            console.debug(e.type+' triggered')
+            //console.debug(e.type+' triggered')
             $(this).addClass('selected').siblings().removeClass('selected');
           });
         }
       }
       // For dekstop jQuery
       controlsSettings.optionsContainer.on('click','.option', function (e) {
-        console.debug(e.type+' triggered');
+        //console.debug(e.type+' triggered');
         $(this).addClass('selected').siblings().removeClass('selected')
       })
     }
