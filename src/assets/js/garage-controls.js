@@ -53,6 +53,7 @@ var GarageControls = (function (self, $) {
         itemWidth = $(v).outerWidth();
       });
       // Set width & account for toggle width
+      // TODO: Update width dynamically: check width on ready
       view.width(itemCount*itemWidth-70);
 
       self.setControlsState();
