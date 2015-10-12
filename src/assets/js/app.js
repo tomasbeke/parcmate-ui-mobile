@@ -22,7 +22,8 @@ app.config(function($routeProvider) {
     'forgot-email',
     'forgot-password',
     'find-garage',
-    'style-guide'
+    'style-guide',
+    'sprite-guide'
   ]
 
   arr.forEach(function (el, i, array) {

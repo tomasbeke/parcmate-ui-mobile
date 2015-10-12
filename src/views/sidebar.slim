@@ -5,8 +5,11 @@
     .list-group ui-turn-off="uiSidebarLeft"
       a.list-group-item href="#/"
         | Landing
-      -for page in ['landing-signedin', 'login', 'login-error', 'find-garage']
+      -for page in ['landing-signedin',
+        'login',
+        'login-error',
+        'find-garage',
+        'style-guide',
+        'sprite-guide']
         a.list-group-item href="#/#{page}"
           | #{page}
-      a.list-group-item href="#/style-guide"
-        | Style Guide

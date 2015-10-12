@@ -43,23 +43,22 @@ $naviconsRetina: sprite-map("sprite/retina/*.png", $spacing: 20px);
   }
 }
 
-// Sprite Style Guide
-// $i: 0;
-// @each $icon, $content in sprite_names($naviconsNormal) {
-//  $i: $i + 1;
-//  .styleguide .icons li:nth-child(#{$i}) {
-//     &:before {
-//     content: ‘’;
-//     @extend .icn;
-//     @extend .icn-#{$icon};
-//     display: inline-block;}
-//  &:after {
-//    content: ‘icon-#{$icon}’;
-//    padding-left:10px;
-//    display: inlin-block;
-//   }
-//  }
-// }
+$i: 0;
+@each $icon, $content in sprite_names($naviconsNormal) {
+ $i: $i + 1;
+ .sprite-guide .sprite li:nth-child(#{$i}) {
+    &:before {
+      content: '';
+      @extend .sprite;
+      @extend .sprite-#{$icon};
+      display: inline-block;}
+    &:after {
+      content: 'sprite-#{$icon}';
+      padding-left:10px;
+      display: inline-block;
+    }
+  }
+}
 
 // width and height to bg-position
 // @include all-normal-sprites(true);
