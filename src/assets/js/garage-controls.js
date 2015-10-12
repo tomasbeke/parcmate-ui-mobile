@@ -100,7 +100,7 @@ var GarageControls = (function (self, $) {
           return true;
       });
       self.togglePosition();
-      self.triggerClick();
+      self.triggerControlItemClick();
     },
 
     tap : function (e) {
@@ -192,10 +192,23 @@ var GarageControls = (function (self, $) {
       });
     },
     // Register even on garage item scroll
-    triggerClick : function () {
+    triggerControlItemClick : function () {
       var self = this;
-      $('.option', controlsSettings.optionsContainer).on('click', function (e) {
-        console.debug(e.type+' click');
+      var items = document.getElementsByClassName('option'),
+          item;
+      // For mobile
+      if (typeof window.ontouchstart !== undefined) {
+        for (var i = 0; i < items.length; i++) {
+          item = items[i];
+          item.addEventListener('touchstart', function (e) {
+            console.debug(e.type+' triggered')
+            $(this).addClass('selected').siblings().removeClass('selected');
+          });
+        }
+      }
+      // For dekstop jQuery
+      controlsSettings.optionsContainer.on('click','.option', function (e) {
+        console.debug(e.type+' triggered');
         $(this).addClass('selected').siblings().removeClass('selected')
       })
     }
