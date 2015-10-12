@@ -46,7 +46,7 @@ $naviconsRetina: sprite-map("sprite/retina/*.png", $spacing: 20px);
 $i: 0;
 @each $icon, $content in sprite_names($naviconsNormal) {
  $i: $i + 1;
- .sprite-guide .sprite li:nth-child(#{$i}) {
+ .sprite-guide .sprite-container li:nth-child(#{$i}) {
     &:before {
       content: '';
       @extend .sprite;
