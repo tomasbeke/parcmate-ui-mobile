@@ -88,30 +88,42 @@ var MapView = (function () {
       var icons = {
         current : {
           position : mapOptions.center,
-          icon : iconsPath + 'pin-current-location.png'
+          icon : iconsPath + 'pin-current-location.png',
+          opacity : 1
         },
         best : {
           position : new google.maps.LatLng(40.7528,-73.9765),
-          icon : iconsPath + 'pin-best-orange.png'
+          icon : iconsPath + 'pin-best-orange.png',
+          opacity : 1
         },
         closest : {
           position : new google.maps.LatLng(40.7567,-73.9911),
-          icon : iconsPath + 'pin-closet-baby-blue.png'
+          icon : iconsPath + 'pin-closet-baby-blue.png',
+          opacity : 1
         },
         cheapest : {
           position : new google.maps.LatLng(40.7577,-73.97911),
-          icon : iconsPath + 'pin-cheapest-green.png'
+          icon : iconsPath + 'pin-cheapest-green.png',
+          opacity : 1
         },
         other : {
           position : new google.maps.LatLng(40.7497,-73.9831),
           icon : iconsPath + 'pin-other-gray.png',
+          opacity : 0.8
+        },
+        other_0 : {
+          position : new google.maps.LatLng(40.7567,-73.9831),
+          icon : iconsPath + 'pin-other-gray.png',
+          opacity : 0.5
         }
       };
 
       for (var feature in icons) {
+        var prop = icons[feature];
         var marker = new google.maps.Marker({
-          position : icons[feature].position,
-          icon : icons[feature].icon,
+          position : prop.position,
+          icon : prop.icon,
+          opacity : prop.opacity,
           map : map
         });
       }
