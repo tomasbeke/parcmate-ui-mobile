@@ -199,17 +199,13 @@ var MapView = (function () {
         e.preventDefault();
         return false;
       });
-      // $('.close', container).on('click', function (e) {
-      //   $(input).val('');
-      //   e.stopPropagation()
-      //   e.preventDefault();
-      //   return false;
-      // });
       self.stopEvent($('.close', container), 'click', function () {
         $(input).val('');
       });
       self.stopEvent($(input), 'click');
-
+      // TODO: FIND EVENT THAT CLOSES SEARCH DROPDOWN
+      // self.stopEvent($('.pac-item'), 'mouseout');
+      // self.stopEvent($('.pac-container').find('*'), 'mouseout');
       $('html').on('click', function (e) {
         container.hide();
       });
