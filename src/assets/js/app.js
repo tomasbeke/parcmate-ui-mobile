@@ -48,11 +48,19 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   });
   $rootScope.$on('$routeChangeSuccess', function(e, toState){
     var view = toState.$$route.originalPath.replace(/\//g, '');
+
+    var uri = {
+      path : 'https://maps.googleapis.com/maps/api/js',
+      key : 'AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI',
+      callback : 'initGMap',
+      places : 'places'
+    }
+
     $rootScope.state = view;
     if (view === 'find-garage') {
       loadScripts('assets/js/maps.js');
       loadScripts('assets/js/garage-controls.js');
-      loadScripts('https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqMgt-ZS0td_lWiQYD6cSMQ5V9ID6MRI&callback=initGMap');
+      loadScripts(uri.path+'?key='+uri.key+'&libraries='+uri.places+'&callback='+uri.callback);
     }
     $rootScope.loading = false;
   });

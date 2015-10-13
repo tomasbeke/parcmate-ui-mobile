@@ -29,8 +29,16 @@ var MapView = (function () {
     init : function () {
       var self = this;
 
-      self.pcMap = new google.maps.Map(document.getElementById('map'), mapOptions);
+      setMapObject({
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      })
 
+      self.pcMap = new google.maps.Map(document.getElementById('map'), mapOptions);
+      console.log(mapOptions)
+      // Render Search
+      var input = document.getElementById('search-box');
+      var searchBox = new google.maps.places.SearchBox(input);
+      console.log(searchBox)
       // Render Custom Zoom Controls
       var zoomDiv = document.createElement('div');
       var renderZoomControls = self.setZoomControl(zoomDiv, self.pcMap);
@@ -52,6 +60,7 @@ var MapView = (function () {
       var renderFilterControlDiv = self.setFilterControl(filterControlDiv, self.pcMap);
       locateDiv.index = 4;
 
+      self.pcMap.controls[google.maps.ControlPosition.LEFT_TOP].push(input);
       self.pcMap.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(locateDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
@@ -201,6 +210,9 @@ var MapView = (function () {
         console.log(e)
         alert('Filter Control')
       });
+    },
+    setPlacesSearchBox : function (div, map) {
+      console.log(1)
     }
   }
 }());
