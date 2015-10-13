@@ -70,7 +70,7 @@ var MapView = (function () {
     setMarkers : function (map) {
 
     // TODO: Unfortunately, there is no way to set
-    // dynamic content in the marker object
+    // dynamic text content in the marker object
     // so an overlay needs to be used (with lat/long props)
     // to mimic marker functionality
 
@@ -136,6 +136,7 @@ var MapView = (function () {
       for (var feature in icons) {
         var prop = icons[feature];
         var marker = new google.maps.Marker({
+          title : 'test title',
           position : prop.position,
           icon : prop.icon,
           opacity : prop.opacity,
@@ -143,7 +144,20 @@ var MapView = (function () {
           draggable : prop.draggable,
           map : map
         });
+        // Add listener on marker itself
+        google.maps.event.addDomListener(marker, 'click', (function (marker, prop) {
+          return function () {
+            // do something on click
+            console.log(marker, prop);
+            // Temp content for info window
+            var infowindow = new google.maps.InfoWindow({
+              content : 'This is a test info window. This marker is draggable.'
+            });
+            infowindow.open(map, marker)
+          }
+        })(marker, prop));
       }
+
 
     },
     addMarkers : function (map) {
