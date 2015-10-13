@@ -109,7 +109,6 @@ var MapView = (function () {
       };
 
       for (var feature in icons) {
-        console.log(icons[feature], feature)
         var marker = new google.maps.Marker({
           position : icons[feature].position,
           icon : icons[feature].icon,
@@ -122,7 +121,7 @@ var MapView = (function () {
       var self = this;
       // Pass to Garage Controls to add new markers on click
       console.debug('addMarkers called');
-      self.setMarkers(self.pcMap);
+      // self.setMarkers(self.pcMap);
     },
     setZoomControl : function (div, map) {
       var controlDiv = div;
