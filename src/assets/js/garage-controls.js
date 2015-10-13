@@ -197,7 +197,7 @@ var GarageControls = (function (self, $) {
       var togglePosL = $('.toggle', c).position().left,
           cPosR = c.outerWidth();
       // TODO 1: Fix incorrect calculation
-      // TODO 2: Update toggle for mobile 
+      // TODO 2: Update toggle for mobile
       // Test positions for scroll
       // & add position/change direction
       console.log('||||||||||||||||||||||||')
@@ -241,6 +241,7 @@ var GarageControls = (function (self, $) {
       controlsSettings.optionsContainer.on('click','.option', function (e) {
         //console.debug(e.type+' triggered');
         $(this).addClass('selected').siblings().removeClass('selected')
+        MapView.addMarkers();
       })
     }
   }

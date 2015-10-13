@@ -56,46 +56,73 @@ var MapView = (function () {
       var renderFilterControlDiv = self.setFilterControl(filterControlDiv, self.pcMap);
       locateDiv.index = 4;
 
-
+      // Push DOM
       self.pcMap.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(locateDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(filterControlDiv);
 
+      // Add markers to map
       self.setMarkers(self.pcMap);
 
     },
-    // Markers
+    // Set Markers
     setMarkers : function (map) {
-      var self = this;
-      var iconsPath = 'assets/images/map-icons/';
-      // Set multiple markers
-      var icons = {
-        current : iconsPath + 'pin-current-location.png',
-        best : iconsPath + 'pin-best-orange.png',
-        closest : iconsPath + 'pin-closet-baby-blue.png',
-        cheapest : iconsPath + 'pin-cheapest-green.png',
-        other : iconsPath + 'pin-other-gray.png',
-        parked : iconsPath + 'pin-parked-blue.png',
-        findGarage : iconsPath + 'pin-find-garage-blue.png'
-      }
+
+      var self = this,
+          iconsPath = 'assets/images/map-icons/';
+
+      // ALL OPTIONS FOR EXISTING MARKERS
+      // var icons = {
+      //   current : iconsPath + 'pin-current-location.png',
+      //   best : iconsPath + 'pin-best-orange.png',
+      //   closest : iconsPath + 'pin-closet-baby-blue.png',
+      //   cheapest : iconsPath + 'pin-cheapest-green.png',
+      //   other : iconsPath + 'pin-other-gray.png',
+      //   parked : iconsPath + 'pin-parked-blue.png',
+      //   findGarage : iconsPath + 'pin-find-garage-blue.png'
+      // }
 
       // TODO: Multiple Featured Markers
 
-      var markerCurrentLocation = new google.maps.Marker({
-        position: mapOptions.center,
-        map: map,
-        icon: iconsPath + 'pin-current-location.png'
-      });
+      var icons = {
+        current : {
+          position : mapOptions.center,
+          icon : iconsPath + 'pin-current-location.png'
+        },
+        best : {
+          position : new google.maps.LatLng(40.7528,-73.9765),
+          icon : iconsPath + 'pin-best-orange.png'
+        },
+        closest : {
+          position : new google.maps.LatLng(40.7567,-73.9911),
+          icon : iconsPath + 'pin-closet-baby-blue.png'
+        },
+        cheapest : {
+          position : new google.maps.LatLng(40.7577,-73.97911),
+          icon : iconsPath + 'pin-cheapest-green.png'
+        },
+        other : {
+          position : new google.maps.LatLng(40.7497,-73.9831),
+          icon : iconsPath + 'pin-other-gray.png',
+        }
+      };
 
-      markerCurrentLocation.setMap(map)
+      for (var feature in icons) {
+        console.log(icons[feature], feature)
+        var marker = new google.maps.Marker({
+          position : icons[feature].position,
+          icon : icons[feature].icon,
+          map : map
+        });
+      }
+
     },
-    addMarkers : function (feature, icons) {
-      var marker = new google.maps.Marker({
-        position: feature.position,
-        icon: icons[feature.type].icon,
-        map: map
-      });
+    addMarkers : function (map) {
+      var self = this;
+      // Pass to Garage Controls to add new markers on click
+      console.debug('addMarkers called');
+      self.setMarkers(self.pcMap);
     },
     setZoomControl : function (div, map) {
       var controlDiv = div;
