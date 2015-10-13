@@ -35,10 +35,6 @@ var MapView = (function () {
 
       self.pcMap = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-      // Render Search
-      var input = document.getElementById('search-box');
-      var searchBox = new google.maps.places.SearchBox(input);
-
       // Render Custom Zoom Controls
       var zoomDiv = document.createElement('div');
       var renderZoomControls = self.setZoomControl(zoomDiv, self.pcMap);
@@ -60,7 +56,7 @@ var MapView = (function () {
       var renderFilterControlDiv = self.setFilterControl(filterControlDiv, self.pcMap);
       locateDiv.index = 4;
 
-      self.pcMap.controls.push(input);
+
       self.pcMap.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(locateDiv);
       self.pcMap.controls[google.maps.ControlPosition.RIGHT_TOP].push(searchControlDiv);
@@ -180,6 +176,7 @@ var MapView = (function () {
       });
     },
     setSearchControl : function (div, map) {
+      var self = this;
       var controlDiv = div;
       // Set CSS for search icon control
       controlDiv.style.margin = '75px 15px 0 0';
@@ -189,10 +186,25 @@ var MapView = (function () {
       controlDiv.style.width = '31px';
       // Sprite Class
       controlDiv.className = 'sprite sprite-search-glass';
+      // Set Search
+      var container = $('.search-container');
+      var input = document.getElementById('search-box'),
+          searchBox = new google.maps.places.SearchBox(input);
+      self.setPlacesSearchBox(searchBox, self.pcMap, input);
       // Add events
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
-        console.log(e)
-        alert('Search Control')
+        // Render Search
+        container.show();
+      });
+      $('.close',container).on('click', function () {
+        $(input).val('');
+        container.hide();
+      });
+    },
+    setPlacesSearchBox : function (el, map, input) {
+      console.log(el, input)
+      map.addListener('bounds_changed', function() {
+        el.setBounds(map.getBounds());
       });
     },
     setFilterControl : function (div, map) {
@@ -210,9 +222,6 @@ var MapView = (function () {
         console.log(e)
         alert('Filter Control')
       });
-    },
-    setPlacesSearchBox : function (div, map) {
-      console.log(1)
     }
   }
 }());
