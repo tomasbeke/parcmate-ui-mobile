@@ -195,14 +195,26 @@ var MapView = (function () {
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         // Render Search
         container.show();
+        e.stopPropagation()
+        e.preventDefault();
+        return false;
       });
-      $('.close',container).on('click', function () {
+      // $('.close', container).on('click', function (e) {
+      //   $(input).val('');
+      //   e.stopPropagation()
+      //   e.preventDefault();
+      //   return false;
+      // });
+      self.stopEvent($('.close', container), 'click', function () {
         $(input).val('');
+      });
+      self.stopEvent($(input), 'click');
+
+      $('html').on('click', function (e) {
         container.hide();
       });
     },
     setPlacesSearchBox : function (el, map, input) {
-      console.log(el, input)
       map.addListener('bounds_changed', function() {
         el.setBounds(map.getBounds());
       });
@@ -221,6 +233,16 @@ var MapView = (function () {
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         console.log(e)
         alert('Filter Control')
+      });
+    },
+    stopEvent : function (el, e, callback) {
+      el.on(e, function (event) {
+        if (typeof callback === 'function' && callback !== undefined) {
+          callback();
+        }
+        event.stopPropagation()
+        event.preventDefault();
+        return false;
       });
     }
   }
