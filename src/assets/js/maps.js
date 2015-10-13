@@ -69,6 +69,11 @@ var MapView = (function () {
     // Set Markers
     setMarkers : function (map) {
 
+    // TODO: Unfortunately, there is no way to set
+    // dynamic content in the marker object
+    // so an overlay needs to be used (with lat/long props)
+    // to mimic marker functionality
+
       var self = this,
           iconsPath = 'assets/images/map-icons/';
 
@@ -82,8 +87,6 @@ var MapView = (function () {
       //   parked : iconsPath + 'pin-parked-blue.png',
       //   findGarage : iconsPath + 'pin-find-garage-blue.png'
       // }
-
-      // TODO: Multiple Featured Markers
 
       var icons = {
         current : {
