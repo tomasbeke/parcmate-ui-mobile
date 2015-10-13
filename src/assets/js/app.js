@@ -57,6 +57,7 @@ app.controller('parcMateController', function ($rootScope, $scope) {
     }
 
     $rootScope.state = view;
+    // TODO: Come up with way to not load multiple times.
     if (view === 'find-garage') {
       loadScripts('assets/js/maps.js');
       loadScripts('assets/js/garage-controls.js');
