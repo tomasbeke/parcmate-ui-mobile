@@ -89,32 +89,44 @@ var MapView = (function () {
         current : {
           position : mapOptions.center,
           icon : iconsPath + 'pin-current-location.png',
-          opacity : 1
+          opacity : 1,
+          clickable : true,
+          draggable : true
         },
         best : {
           position : new google.maps.LatLng(40.7528,-73.9765),
           icon : iconsPath + 'pin-best-orange.png',
-          opacity : 1
+          opacity : 1,
+          clickable : false,
+          draggable : false
         },
         closest : {
           position : new google.maps.LatLng(40.7567,-73.9911),
           icon : iconsPath + 'pin-closet-baby-blue.png',
-          opacity : 1
+          opacity : 1,
+          clickable : false,
+          draggable : false
         },
         cheapest : {
           position : new google.maps.LatLng(40.7577,-73.97911),
           icon : iconsPath + 'pin-cheapest-green.png',
-          opacity : 1
+          opacity : 1,
+          clickable : false,
+          draggable : false
         },
         other : {
           position : new google.maps.LatLng(40.7497,-73.9831),
           icon : iconsPath + 'pin-other-gray.png',
-          opacity : 0.8
+          opacity : 0.8,
+          clickable : false,
+          draggable : false
         },
         other_0 : {
           position : new google.maps.LatLng(40.7567,-73.9831),
           icon : iconsPath + 'pin-other-gray.png',
-          opacity : 0.5
+          opacity : 0.5,
+          clickable : false,
+          draggable : false
         }
       };
 
@@ -124,6 +136,8 @@ var MapView = (function () {
           position : prop.position,
           icon : prop.icon,
           opacity : prop.opacity,
+          clickable : prop.clickable,
+          draggable : prop.draggable,
           map : map
         });
       }
