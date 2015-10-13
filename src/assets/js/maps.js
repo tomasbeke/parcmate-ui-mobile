@@ -72,7 +72,7 @@ var MapView = (function () {
     // TODO: Unfortunately, there is no way to set
     // dynamic text content in the marker object
     // so an overlay needs to be used (with lat/long props)
-    // to mimic marker functionality
+    // to mimic marker functionality: log[/есенин]
 
       var self = this,
           iconsPath = 'assets/images/map-icons/';
