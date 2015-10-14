@@ -9,4 +9,7 @@
       .col-xs-12.search-container
         input(id='search-box' class='controls' type='text' placeholder='Search')
         button.icon.close &times;
+    button.btn(ui-turn-on='modal1') modal
     #map
+div(ui-content-for='modals')
+  div(ng-include="'modal-filter.html'")

@@ -338,10 +338,11 @@ var MapView = (function () {
       controlDiv.style.width = '27px';
       // Sprite Class
       controlDiv.className = 'sprite sprite-filter-big-blue';
+      controlDiv.setAttribute('ui-turn-on', 'modal1');
       // Add events
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
-        console.log(e)
-        alert('Filter Control')
+        // var modalHTML = '<div ui-content-for="modals"><div ng-include="\'modal.html\'"</div></div>';
+        // $('.modals-container').append(modalHTML);
       });
     },
     stopEvent : function (el, e, callback) {
