@@ -11,21 +11,44 @@
 
 // Filter Modal
   .filter-modal
+    .modal-header
+      clearfix()
+      .close
+        float right
     background $gray-lighter
+    h4
+      font-size $font-size-large
+      font-weight $font-bold
+      text-align center
+      span
+        display inline-block
+      .sprite
+        margin-right 10px
     .modal-footer
-      padding-top 0
-    .container
+      padding-top 1px
+    .container-fluid
       padding 0 15px
       .form-group
-        min-height 175px
+        min-height 150px
         margin 0
         border 0 none
       .info-window
         float none
         color $blue
         font-weight $font-light
-        min-height 175px
+        min-height 150px
         position relative
+        box-shadow 1px 0 0 0 $blue, 0 1px 0 0 $blue, 1px 1px 0 0 $blue, 1px 0 0 0 $blue inset, 0 1px 0 0 $blue inset
+        .mock-dropdown
+          margin 0 auto 20px
+          select
+            color $blue
+            font-size $font-size-large
+            font-weight $font-bold
+        &.parking-type
+          color $white
+          .sprite
+            margin 0 auto 30px auto
         > div
           padding 0 15px 15px
           height inherit

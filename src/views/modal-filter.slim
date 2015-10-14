@@ -4,13 +4,15 @@
     .modal-content.filter-modal
       .modal-header
         button.icon.close ui-turn-off='modal1'  &times;
-        h4.modal-title Filter By
+        h4.modal-title
+          span.sprite.sprite-filter-small-black
+          span Filter by
       form#filter-form
-        .modal-body.container
+        .modal-body.container-fluid
           .row.form-group
-            .col-xs-6.info-window.parking-type
+            .col-xs-6.info-window.parking-type.bg-blue
               div
-                span.option
+                span.sprite.sprite-checkmark-white
                 span.text Covered Parking
             .col-xs-6.info-window.payment-type
               div
@@ -25,6 +27,7 @@
                 .mock-dropdown
                   i.icon-angle-down
                   select.form-control
+                    option value='No Limit' No Limit
                     - for i in (1..20)
                       option value='#{i}' $ #{i}
                 span.text Maximum Rate/Hour
