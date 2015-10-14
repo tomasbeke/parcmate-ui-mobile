@@ -147,13 +147,51 @@ var MapView = (function () {
         // Add listener on marker itself
         google.maps.event.addDomListener(marker, 'click', (function (marker, prop) {
           return function () {
-            // do something on click
-            // Temp content for info window
+            // Customize info window by removing & modifying default markup
+            var iwOuter = $('.gm-style-iw');
+            console.log(iwOuter)
 
             // Create Info Window example for garage information
-            var contentHTMLString = '<div id="garage-id">';
+            // HORRIBLE STRING!!!!!!!! SHOOT ME!
+            var strVar="";
+                strVar += "<div class=\"garage-info-window\" id=\"garage-id\">";
+                strVar += "<div class=\"container-fluid\">";
+                strVar += "<div class=\"row garage-masthead\">";
+                strVar += "<div class=\"col-xs-6 address\">";
+                strVar += "<h1>";
+                strVar += "Garage Name";
+                strVar += "<\/h1>";
+                strVar += "<address><span class=\"street\">133 E 61 st<\/span><span class=\"city-state-zip\">New York, NY 11223<\/span><\/address>";
+                strVar += "<\/div>";
+                strVar += "<div class=\"col-xs-6 favorite\">";
+                strVar += "<div>";
+                strVar += "<span class=\"sprite sprite-favorite-outline\"><\/span>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<div class=\"row garage-telephone\">";
+                strVar += "<div class=\"col-xs-12\">";
+                strVar += "<span class=\"sprite sprite-phone\"><\/span><span class=\"number\">212.555.1234<\/span>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<div class=\"row garage-info\">";
+                strVar += "<div class=\"col-xs-6 image\">";
+                strVar += "<img>";
+                strVar += "<\/div>";
+                strVar += "<div class=\"col-xs-6 info-reservation\">";
+                strVar += "<div class=\"info-cal\">";
+                strVar += "<span class=\"sprite sprite-i-blue\"><\/span><span class=\"sprite sprite-chedule-blue\"><\/span>";
+                strVar += "<\/div>";
+                strVar += "<div class=\"info-text\">";
+                strVar += "Info\/Make Reservation";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+                strVar += "<\/div>";
+
             var infowindow = new google.maps.InfoWindow({
-              content : contentHTMLString
+              content : strVar
             });
             infowindow.open(map, marker)
           }

@@ -61,7 +61,6 @@
 // Garage Info Window Overlay
 .garage-info-window
   .container-fluid
-    padding 0
     .row
       display flex
       flex-flow row no-wrap
@@ -71,19 +70,23 @@
       h1
         font-size $font-size-base
         font-weight $font-bold
-        margin 0
+        text-align left
+        color $black
+        margin 0 0 5px 0
       address
         margin 0
       .address
+        padding 0
         padding-bottom 5px
-        border-bottom $gray-border
       span
         display block
         color $blue
       .favorite
+        cursor pointer
         span
           margin 0 auto
     .garage-telephone
+      border-top $gray-border
       color $blue
       div
         margin 5px 0
@@ -97,6 +100,7 @@
         img
           height 80px
       .info-reservation
+        cursor pointer
         text-align center
         .info-cal
           span
@@ -107,3 +111,8 @@
               padding-right 5px
               margin-left 0
               border-right 1px solid $blue
+
+// Overwrites for GMap Styles
+.gm-style-iw
+  top 0!important
+  left 0!important
