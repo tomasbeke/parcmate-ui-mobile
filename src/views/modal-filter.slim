@@ -1,11 +1,32 @@
 .modal ui-if='modal1' ui-state='modal1'
   .modal-backdrop.in
   .modal-dialog
-    .modal-content
+    .modal-content.filter-modal
       .modal-header
         button.icon.close ui-turn-off='modal1'  &times;
-        h4.modal-title Modal
-      .modal-body
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        h4.modal-title Filter By
+      form#filter-form
+        .modal-body.container
+          .row.form-group
+            .col-xs-6.info-window.parking-type
+              div
+                span.option
+                span.text Covered Parking
+            .col-xs-6.info-window.payment-type
+              div
+                span.text Credit Cards Accepted
+          .row.form-group
+            .col-xs-6.info-window.working-hours
+              div
+                span.text Open 24 Hours
+            .col-xs-6.info-window
+
+              div
+                .mock-dropdown
+                  i.icon-angle-down
+                  select.form-control
+                    - for i in (1..20)
+                      option value='#{i}' $ #{i}
+                span.text Maximum Rate/Hour
       .modal-footer
         button.btn.btn-default(ui-turn-off='modal1') Button
