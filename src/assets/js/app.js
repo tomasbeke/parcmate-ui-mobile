@@ -22,6 +22,7 @@ app.config(function($routeProvider) {
     'forgot-email',
     'forgot-password',
     'find-garage',
+    'garage-info-window',
     'style-guide',
     'sprite-guide'
   ]

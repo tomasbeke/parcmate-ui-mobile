@@ -148,10 +148,12 @@ var MapView = (function () {
         google.maps.event.addDomListener(marker, 'click', (function (marker, prop) {
           return function () {
             // do something on click
-            console.log(marker, prop);
             // Temp content for info window
+
+            // Create Info Window example for garage information
+            var contentHTMLString = '<div id="garage-id">';
             var infowindow = new google.maps.InfoWindow({
-              content : 'This is a test info window. This marker is draggable.'
+              content : contentHTMLString
             });
             infowindow.open(map, marker)
           }

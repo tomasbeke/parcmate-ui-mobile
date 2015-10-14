@@ -57,3 +57,53 @@
           left 0
           bottom 0
           text-align center
+
+// Garage Info Window Overlay
+.garage-info-window
+  .container-fluid
+    padding 0
+    .row
+      display flex
+      flex-flow row no-wrap
+      justify-content center
+      align-items center
+    .garage-masthead
+      h1
+        font-size $font-size-base
+        font-weight $font-bold
+        margin 0
+      address
+        margin 0
+      .address
+        padding-bottom 5px
+        border-bottom $gray-border
+      span
+        display block
+        color $blue
+      .favorite
+        span
+          margin 0 auto
+    .garage-telephone
+      color $blue
+      div
+        margin 5px 0
+      span
+        display inline-block
+    .garage-info
+      border $gray-border
+      color $blue
+      .image
+        background $gray-light
+        img
+          height 80px
+      .info-reservation
+        text-align center
+        .info-cal
+          span
+            display inline-block
+            margin-left 5px
+            &:first-child
+              width 30px
+              padding-right 5px
+              margin-left 0
+              border-right 1px solid $blue
