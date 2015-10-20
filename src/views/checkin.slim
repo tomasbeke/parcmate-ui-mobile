@@ -10,8 +10,16 @@
         p Please present this Parking pass at Garage Entrance, when you are entering or exiting.
     .row.barcode
       .col-xs-12
-        | scan code
+        img src='assets/images/barcode.png' width='200' height='200' alt='barcode'
     .row.car-carousel
       .col-xs-12 carousel
     .row.reservations
-      .col-xs-12 reservations
+      .col-xs-12.no-reservations
+        p
+          span.sprite.sprite-schedule-black
+          span.text No upcoming reservations
+      .col-xs-12.reservation
+        .row
+          .col-xs-4 1
+          .col-xs-4 1
+          .col-xs-4 1
