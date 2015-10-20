@@ -383,6 +383,7 @@ var MapView = (function () {
       google.maps.event.addDomListener(controlDiv, 'click', function (e) {
         // var modalHTML = '<div ui-content-for="modals"><div ng-include="\'modal.html\'"</div></div>';
         // $('.modals-container').append(modalHTML);
+        console.log(controlDiv)
       });
     },
     stopEvent : function (el, e, callback) {

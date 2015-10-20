@@ -23,6 +23,7 @@ app.config(function($routeProvider) {
     'forgot-password',
     'find-garage',
     'garage-info-window',
+    'modal-filter',
     'style-guide',
     'sprite-guide'
   ]

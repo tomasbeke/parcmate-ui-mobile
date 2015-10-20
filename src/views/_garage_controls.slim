@@ -1,0 +1,44 @@
+.container.garage-controls
+  .row.selectors
+    .col-xs-4.car-type-container.tabs
+      span
+        i.icon-angle-down
+        |  car
+      select.car-type
+        - for car in ['Toyota', 'Lexus', 'Dodge']
+          option value='#{car}' #{car}
+    .col-xs-4.arrive-by.tabs
+      span
+        i.icon-angle-down
+        |  arrive by
+      input type='time' name='time' value='12:00:00'
+    .col-xs-4.duration.tabs
+      span
+        i.icon-angle-down
+        |  duration
+      select.time
+        - for time in (1..10)
+          option value='#{time}' #{time}h
+
+  .row.options#options-offset
+    .scrollable-options#scrollable-options
+      / .col-xs-1.toggle
+      /   a.left(href='')
+      /     i.fa.fa-chevron-left
+      - for option in ['best', 'closest', 'cheapest', 'other', 'other', 'other', 'other', 'other', 'other', 'other', 'other','other', 'other', 'other', 'other', 'other', 'other', 'other', 'other']
+        .col-xs-3.option class='#{option}'
+          .type-of
+            span.type #{option}
+            span.price
+              |$
+              span.amount 10
+          .location
+            span.address 133 E. 61 St
+            span.rating
+              - for i in (1..5)
+                i.fa.fa-star
+                //i.fa.fa-star-half
+                //i.fa.fa-star-half-empty
+                //i.fa.fa-star-half-full
+                //i.fa.fa-star-half-o
+                //i.fa.fa-star-o
