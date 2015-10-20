@@ -38,9 +38,38 @@
           margin-right 10px
           vertical-align top
       .reservation
+        margin 0
         .row
+          padding-bottom 15px
+          background $gray-lighter
           > div
             margin 0
             padding-top 15px
             padding-bottom 15px
+            min-height 125px
             box-shadow-border($gray-lighter)
+            background $white
+            text-align center
+            .sprite
+              display inline-block
+        .date-time
+          color $black
+          span
+            display block
+            &.date
+              font-weight $font-bold
+            &.time
+              font-size $font-size-large
+              font-weight $font-light
+        .lot-location
+          .sprite
+            width 20px
+            height 25px
+          color $blue
+          address
+            .name
+              font-weight $font-bold
+            span
+              display block
+        .car-info
+          padding 0!important
