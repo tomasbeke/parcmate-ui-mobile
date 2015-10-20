@@ -17,20 +17,21 @@
             .user-barcode
               img src='assets/images/barcode.png' width='200' height='200' alt='barcode'
             .car-scroller
-              .vehicle-wrap
-                .vehicle-widget
-                  .val-row
-                    span.vehicle-info
-                      span.vehicle-make Mercedes Benz
-                      span.vehicle-model CLA-Class
-                      span.vehicle-year
-                      span.vehicle-type
-                  .val-row
-                    span.vehicle-plate
-                      span.vehicle-state NY
-                      span.vehicle-plate-number 21DP79
-                  .vehicle-widget-img
-                    img src='assets/images/car.jpg' alt='{{vehicle-info}}'
+              -for i in (1..3)
+                .vehicle-wrap
+                  .vehicle-widget
+                    .val-row
+                      span.vehicle-info
+                        span.vehicle-make Mercedes Benz&nbsp;
+                        span.vehicle-model CLA-Class
+                        span.vehicle-year
+                        span.vehicle-type
+                    .val-row
+                      span.vehicle-plate
+                        span.vehicle-state NY
+                        span.vehicle-plate-number 21DP79
+                    .vehicle-widget-img
+                      img src='assets/images/car.jpg' alt='{{vehicle-info}}'
 
           .col-xs-2.car-selected-nav.car-selected-next.disabled
             i.fa.fa-chevron-right.pull-right
