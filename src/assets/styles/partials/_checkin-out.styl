@@ -25,9 +25,27 @@
         padding 0 20px
         margin 0
         text-align center
-    .barcode
-      > div
-        text-align center
+
+    // Car carousel
+    .car-carousel
+      text-align center
+      position relative
+      .car-selected-nav
+        position absolute
+        top 35%
+        z-index 100
+        i
+          cursor pointer
+        &.disabled
+          i
+            color $gray-lighter
+        &.car-selected-prior
+          left 0
+        &.car-selected-next
+          right 0
+
+
+    // Reservation
     .reservations
       p
         font-size $font-size-large
