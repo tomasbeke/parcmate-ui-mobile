@@ -43,8 +43,11 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $scope.swiped = function(direction) {
     alert('Swiped ' + direction);
   };
+
   // User agent displayed in home page
   $scope.userAgent = navigator.userAgent;
+
+  removeItem($scope);
 
   // Needed for the loading screen
   $rootScope.$on('$routeChangeStart', function(e, toState){
@@ -75,4 +78,17 @@ function loadScripts (src) {
   var script = document.createElement('script');
   script.src = src;
   document.body.appendChild(script);
+}
+
+function removeItem ($scope) {
+  $scope.$on('$viewContentLoaded', function () {
+    var item = $('.reservation');
+    $.each(item, function (i, v) {
+      var self = $(this);
+      self.find('.close').on('click', function () {
+        self.remove();
+        return false;
+      })
+    });
+  })
 }

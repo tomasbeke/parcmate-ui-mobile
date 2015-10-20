@@ -79,11 +79,11 @@
         .row
           padding-bottom 15px
           background $gray-lighter
+          display flex
           > div
             margin 0
             padding-top 15px
             padding-bottom 15px
-            min-height 125px
             box-shadow-border($gray-lighter)
             background $white
             text-align center
@@ -110,3 +110,19 @@
               display block
         .car-info
           padding 0!important
+          span
+            display block
+          .car-make
+            border-bottom $gray-border
+            padding 15px 0
+            .name
+              font-weight $font-bold
+          .controls
+            flex-display(center)
+            > div
+              padding 10px 0
+              width 50%
+              &:last-child
+                border-left $gray-border
+                .icon.close
+                  background $gray-dark
