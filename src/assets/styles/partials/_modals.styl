@@ -62,7 +62,31 @@
   .get-car-modal
     .modal-title
       text-align center
+    .time-slots
+      padding-top 0
+      .row
+        margin 0
+      .slot
+        vertical-align middle
+        clearfix()
+        .sprite
+          display-type(none)
+        &.active
+          background $blue
+          color $white
+          .sprite
+            display-type(block)
+            float left
+        box-shadow-border($blue)
+        padding 15px 30px
+        text-align center
+        font-size $font-size-large
+        font-weight $font-bold
+        color $blue
+        .text
+          font-weight $font-light
     .modal-footer
+      padding-top 0
       .row
         > div
           &:first-child
