@@ -1,5 +1,17 @@
 .row.rate-register
+  // Generic Fields
+  - for i in (1..5)
+    .col-xs-12.field
+      .row
+        .col-xs-7.value-label.cell label:
+        .col-xs-5.value.cell value
+  // Field with Dropdown
   .col-xs-12.field
     .row
-      .col-xs-6.value-label.cell label:
-      .col-xs-6.value.cell value
+      .col-xs-7.value-label.cell label:
+      .col-xs-5.value.cell value
+  // Last Field
+  .col-xs-12.field.field-double-border-top
+    .row
+      .col-xs-7.value-label.cell label:
+      .col-xs-5.value.bold.cell value
