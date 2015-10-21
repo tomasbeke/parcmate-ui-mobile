@@ -1,4 +1,72 @@
-.scrollable-content.checkout.checkin-out
+.scrollable-content.checkin.checkin-out
   .container
-    .row
+    .row.masthead
       .col-xs-12
+        h1
+          span.sprite.sprite-check-in-black
+          span Check In
+    .row.info
+      .col-xs-12
+        p Please present this Parking pass at Garage Entrance, when you are entering or exiting.
+    .row.car-carousel
+      .col-xs-12
+        .row
+          .col-xs-2.car-selected-nav.car-selected-prior
+            i.fa.fa-chevron-left.pull-left
+          .col-xs-12.carousel-container
+            .user-barcode
+              img src='assets/images/barcode.png' width='200' height='200' alt='barcode'
+            .car-scroller
+              -for i in (1..3)
+                .vehicle-wrap
+                  .vehicle-widget
+                    .val-row
+                      span.vehicle-info
+                        span.vehicle-make Mercedes Benz&nbsp;
+                        span.vehicle-model CLA-Class
+                        span.vehicle-year
+                        span.vehicle-type
+                    .val-row
+                      span.vehicle-plate
+                        span.vehicle-state NY
+                        span.vehicle-plate-number 21DP79
+                    .vehicle-widget-img
+                      img src='assets/images/car.jpg' alt='{{vehicle-info}}'
+
+          .col-xs-2.car-selected-nav.car-selected-next.disabled
+            i.fa.fa-chevron-right.pull-right
+    .row.reservations
+      .col-xs-12.upcoming-reservations
+        p
+          span.sprite.sprite-schedule-black
+          span.text Upcoming Reservations
+      - for i in (1..4)
+        .col-xs-12.reservation
+          .row
+            .col-xs-4.date-time
+              span.sprite.sprite-clock-my-tab-black
+              span.date
+                i.month Sep&nbsp;
+                i.numeral 18
+              span.day Tuesday
+              span.time
+                i.hour 6&nbsp;
+                i.minute 00&nbsp;
+                i.meridiem PM
+
+            .col-xs-4.lot-location
+              span.sprite.sprite-small-parking-pin
+              address
+                span.name Icon Parking
+                span 133 E 61st
+                span New York, NY
+
+            .col-xs-4.car-info
+              .car-make
+                span.sprite.sprite-small-car-black
+                span.name Mercedes-Benz
+              .controls
+                .edit
+                  a href='#' Edit
+                .remove
+                  button.icon.close &times;
