@@ -4,6 +4,24 @@
     display block
 
 .checkin-out
+  &.checkout
+    .get-car-ready
+      > div
+        border-top $gray-border
+        border-bottom $gray-border
+      button
+        background none
+        width 100%
+        border 0
+        text-align center
+        padding 15px 0
+        .sprite
+          margin-right 10px
+        span
+          display inline-block
+          vertical-align middle
+          color $blue
+          font-size $font-size-large
   padding 0
   .container-fluid
     background $white
