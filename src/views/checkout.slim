@@ -38,7 +38,7 @@
     / Get Car Ready
     .row.get-car-ready
       .col-xs-12
-        button
+        button(type='button' ui-turn-on='modal1')
           span.sprite.sprite-car
           span.text get the car ready
     / My Tab Row
@@ -46,6 +46,7 @@
       .col-xs-12
         .row.tab-header
           .col-xs-12
+
             h2
               span.sprite.sprite-my-tab
               span.text My Tab
@@ -73,3 +74,6 @@
                 .slot
                   span.time 5:00 pm
                   span.price $20.95
+/ Include Modal for Get Car
+div(ui-content-for='modals')
+  div(ng-include="'modal-get-car.html'")
