@@ -54,6 +54,7 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $rootScope.$on('$routeChangeStart', function(e, toState){
     $rootScope.loading = true;
   });
+
   $rootScope.$on('$routeChangeSuccess', function(e, toState){
     var view = toState.$$route.originalPath.replace(/\//g, '');
 
