@@ -19,7 +19,7 @@
         margin 0
         font-size $font-size-large
         .sprite
-          display inline-block
+          display-type(inline-block)
           margin-right 10px
           vertical-align middle
     .info
@@ -52,7 +52,7 @@
         min-height 200px
         width 100%
         .vehicle-wrap
-          display inline-block
+          display-type(inline-block)
           min-height 200px
           width 100%
         .val-row
@@ -73,7 +73,7 @@
         text-align center
         margin 0
         .sprite
-          display inline-block
+          display-type(inline-block)
           margin-right 10px
           vertical-align top
       .reservation
@@ -81,7 +81,7 @@
         .row
           padding-bottom 15px
           background $gray-lighter
-          display flex
+          display-type(flex)
           > div
             margin 0
             padding-top 15px
@@ -90,11 +90,11 @@
             background $white
             text-align center
             .sprite
-              display inline-block
+              display-type(inline-block)
         .date-time
           color $black
           span
-            display block
+            display-type(block)
             &.date
               font-weight $font-bold
             &.time
@@ -109,11 +109,11 @@
             .name
               font-weight $font-bold
             span
-              display block
+              display-type(block)
         .car-info
           padding 0!important
           span
-            display block
+            display-type(block)
           .car-make
             border-bottom $gray-border
             padding 15px 0
@@ -149,10 +149,10 @@
               .sprite
                 margin-right 10px
               span
-                display inline-block
+                display-type(inline-block)
                 vertical-align middle
           &.tab-content
-            display flex
+            display-type(flex)
             > div
               text-align center
               &.toggle-arrow
@@ -167,9 +167,9 @@
               &.upcoming-rate-changes
                 background $gray-lighter
                 .content
-                  flex-simple()
+                  display-type(flex)
                   .slot
-                    flex-grow()
+                    flex-grow(1, 0)
                     .price
                       font-size $font-size-large
                       font-weight $font-bold
@@ -178,7 +178,7 @@
               .content
                 padding 5px 0
                 span
-                  display block
+                  display-type(block)
                   &.timer
                     font-size $font-size-large
               h3
@@ -200,7 +200,7 @@
         .sprite
           margin-right 10px
         span
-          display inline-block
+          display-type(inline-block)
           vertical-align middle
           color $blue
           font-size $font-size-large
