@@ -9,7 +9,7 @@
     background $white
     .row
       > div
-        margin 10px 0
+        margin 5px 0
     .masthead
       text-align center
       > div
@@ -166,6 +166,13 @@
                   background $dark-blue
               &.upcoming-rate-changes
                 background $gray-lighter
+                .content
+                  flex-simple()
+                  .slot
+                    flex-grow()
+                    .price
+                      font-size $font-size-large
+                      font-weight $font-bold
                 h3
                   background #ccc
               .content

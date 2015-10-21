@@ -52,7 +52,7 @@
         .row.tab-content
           .col-xs-5.current-rate-time
             h3 current rate time left
-            div.content
+            .content
               span.text
                 | until&nbsp;
                 i.time 5:00 pm
@@ -67,3 +67,8 @@
           .col-xs-1.toggle-arrow arr
           .col-xs-6.upcoming-rate-changes
             h3 upcoming rate changes
+            .content
+              - for i in (1..2)
+                .slot
+                  span.time 5:00 pm
+                  span.price $20.95
