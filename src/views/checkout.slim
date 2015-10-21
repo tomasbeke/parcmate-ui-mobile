@@ -35,45 +35,9 @@
 
           .col-xs-2.car-selected-nav.car-selected-next.disabled
             i.fa.fa-chevron-right.pull-right
-    / Get Car Ready
-    .row.get-car-ready
-      .col-xs-12
-        button(type='button' ui-turn-on='modal1')
-          span.sprite.sprite-car
-          span.text get the car ready
-    / My Tab Row
-    .row.my-tab
-      .col-xs-12
-        .row.tab-header
-          .col-xs-12
+    include mixins/_get-car.slim
+    include mixins/_my-tab.slim
 
-            h2
-              span.sprite.sprite-my-tab
-              span.text My Tab
-        .row.tab-content
-          .col-xs-5.current-rate-time
-            h3 current rate time left
-            .content
-              span.text
-                | until&nbsp;
-                i.time 5:00 pm
-                |  &mdash;&nbsp;
-                i.price $15.95
-              span.timer
-                i.hour 00
-                | &nbsp;:&nbsp;
-                i.minute 00
-                | &nbsp;:&nbsp;
-                i.second 00
-          .col-xs-1.toggle-arrow
-            i.fa.fa-chevron-left
-          .col-xs-6.upcoming-rate-changes
-            h3 upcoming rate changes
-            .content
-              - for i in (1..2)
-                .slot
-                  span.time 5:00 pm
-                  span.price $20.95
 / Include Modal for Get Car
 div(ui-content-for='modals')
   div(ng-include="'modal-get-car.html'")

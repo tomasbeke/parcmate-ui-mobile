@@ -162,3 +162,23 @@ html
     clearfix()
     text-align center
     font-size $font-size-large
+
+// Rate Register Styles
+.rate-register
+  border 3px solid $black
+  border-right none
+  border-left none
+  .field
+    border-bottom $dark-gray-border
+    &.field-double-border-top
+      border-top 3px solid $black
+    &.field-double-border-bottom
+      border-bottom 3px solid $black
+    .cell
+      padding 15px
+      text-transform capitalize
+      &.value-label
+        text-align right
+        font-weight $font-bold
+      &.value
+        text-align left

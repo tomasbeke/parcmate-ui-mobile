@@ -1,5 +1,6 @@
 .has-class-checkin
 .has-class-checkout
+.has-class-my-tab
   .hamburger-menu
     display block
 
@@ -131,6 +132,7 @@
 
   // Checkout Specific
   &.checkout
+  &.my-tab-view
     .my-tab
       > div
         margin 0
@@ -139,6 +141,11 @@
             margin 0
             padding 0
           &.tab-header
+            position relative
+            .chevron-up
+              position absolute
+              left 15px
+              top 10px
             > div
               padding 15px 0
               border-bottom $gray-border
@@ -211,4 +218,9 @@
 
   // My Tab Specific
   &.my-tab-view
-    padding 0
+    .container-fluid
+      .row
+        > div
+          margin 0
+    .tab-header
+      display-type(none)

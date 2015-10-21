@@ -1,0 +1,34 @@
+/ My Tab Row
+.row.my-tab
+  .col-xs-12
+    .row.tab-header
+      .col-xs-12
+        span.chevron-up
+          i.fa.fa-chevron-up
+        h2
+          span.sprite.sprite-my-tab
+          span.text My Tab
+    .row.tab-content
+      .col-xs-5.current-rate-time
+        h3 current rate time left
+        .content
+          span.text
+            | until&nbsp;
+            i.time 5:00 pm
+            |  &mdash;&nbsp;
+            i.price $15.95
+          span.timer
+            i.hour 00
+            | &nbsp;:&nbsp;
+            i.minute 00
+            | &nbsp;:&nbsp;
+            i.second 00
+      .col-xs-1.toggle-arrow
+        i.fa.fa-chevron-left
+      .col-xs-6.upcoming-rate-changes
+        h3 upcoming rate changes
+        .content
+          - for i in (1..2)
+            .slot
+              span.time 5:00 pm
+              span.price $20.95
