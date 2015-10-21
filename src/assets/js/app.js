@@ -24,6 +24,7 @@ app.config(function($routeProvider) {
     'find-garage',
     'checkin',
     'checkout',
+    'my-tab',
     'garage-info-window',
     'modal-filter',
     'style-guide',
