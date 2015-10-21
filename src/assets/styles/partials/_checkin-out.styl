@@ -9,9 +9,11 @@
     background $white
     .row
       > div
-        margin 20px 0
+        margin 10px 0
     .masthead
       text-align center
+      > div
+        margin 20px 0
       h1
         padding 0
         margin 0
@@ -144,13 +146,44 @@
               margin 0
               font-size $font-size-large
               text-align center
+              .sprite
+                margin-right 10px
               span
                 display inline-block
+                vertical-align middle
+          &.tab-content
+            display flex
+            > div
+              text-align center
+              &.toggle-arrow
+                background $gray-dark
+                color $white
+                border-left $white-border
+              &.current-rate-time
+                background $blue
+                color $white
+                h3
+                  background $dark-blue
+              &.upcoming-rate-changes
+                background $gray-lighter
+                h3
+                  background #ccc
+              .content
+                padding 5px 0
+                span
+                  display block
+                  &.timer
+                    font-size $font-size-large
+              h3
+                margin 0
+                padding 5px 0
+                font-size $font-size-base
+                font-weight $font-light
     .get-car-ready
       > div
         border-top $gray-border
         border-bottom $gray-border
-        margin-bottom 0
+        margin 0
       button
         background none
         width 100%

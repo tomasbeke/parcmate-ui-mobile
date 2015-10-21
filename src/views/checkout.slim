@@ -15,7 +15,7 @@
             i.fa.fa-chevron-left.pull-left
           .col-xs-12.carousel-container
             .user-barcode
-              img src='assets/images/barcode.png' width='200' height='200' alt='barcode'
+              img src='assets/images/barcode.png' width='100' height='100' alt='barcode'
             .car-scroller
               -for i in (1..3)
                 .vehicle-wrap
@@ -47,9 +47,23 @@
         .row.tab-header
           .col-xs-12
             h2
-              span.sprite
+              span.sprite.sprite-my-tab
               span.text My Tab
         .row.tab-content
-          .col-xs-4 1
-          .col-xs-4 1
-          .col-xs-4 1
+          .col-xs-5.current-rate-time
+            h3 current rate time left
+            div.content
+              span.text
+                | until&nbsp;
+                i.time 5:00 pm
+                |  &mdash;&nbsp;
+                i.price $15.95
+              span.timer
+                i.hour 00
+                | &nbsp;:&nbsp;
+                i.minute 00
+                | &nbsp;:&nbsp;
+                i.second 00
+          .col-xs-1.toggle-arrow arr
+          .col-xs-6.upcoming-rate-changes
+            h3 upcoming rate changes
