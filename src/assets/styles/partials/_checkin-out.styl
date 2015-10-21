@@ -4,24 +4,6 @@
     display block
 
 .checkin-out
-  &.checkout
-    .get-car-ready
-      > div
-        border-top $gray-border
-        border-bottom $gray-border
-      button
-        background none
-        width 100%
-        border 0
-        text-align center
-        padding 15px 0
-        .sprite
-          margin-right 10px
-        span
-          display inline-block
-          vertical-align middle
-          color $blue
-          font-size $font-size-large
   padding 0
   .container-fluid
     background $white
@@ -144,3 +126,41 @@
                 border-left $gray-border
                 .icon.close
                   background $gray-dark
+
+  // Checkout Specific
+  &.checkout
+    .my-tab
+      > div
+        margin 0
+        .row
+          > div
+            margin 0
+            padding 0
+          &.tab-header
+            > div
+              padding 15px 0
+              border-bottom $gray-border
+            h2
+              margin 0
+              font-size $font-size-large
+              text-align center
+              span
+                display inline-block
+    .get-car-ready
+      > div
+        border-top $gray-border
+        border-bottom $gray-border
+        margin-bottom 0
+      button
+        background none
+        width 100%
+        border 0
+        text-align center
+        padding 15px 0
+        .sprite
+          margin-right 10px
+        span
+          display inline-block
+          vertical-align middle
+          color $blue
+          font-size $font-size-large
