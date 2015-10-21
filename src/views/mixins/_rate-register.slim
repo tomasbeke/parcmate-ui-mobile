@@ -9,7 +9,13 @@
   .col-xs-12.field
     .row
       .col-xs-7.value-label.cell label:
-      .col-xs-5.value.cell value
+      .col-xs-5.value.cell
+        .mock-dropdown
+          i.icon-angle-down
+          select.form-control
+            option val='none' none
+            - for i in ['5', '10', '15', '20', '25']
+              option val='#{i}' #{i}%
   // Last Field
   .col-xs-12.field.field-double-border-top
     .row
