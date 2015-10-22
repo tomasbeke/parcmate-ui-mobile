@@ -1,0 +1,12 @@
+section.basic-information
+  .section-header
+    h2
+      span.sprite.sprite-basic-info
+      span Basic Information
+  fieldset.row
+    .col-xs-12.section-rows
+      - for i in (1..5)
+        .row.form-group
+          label.col-xs-4 Label
+          .col-xs-8
+            input.form-control type='text' placeholder='Placeholder Text'
