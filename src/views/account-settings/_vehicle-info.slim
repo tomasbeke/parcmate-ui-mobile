@@ -4,6 +4,15 @@ section.vehicle-information
       span.sprite.sprite-car-black-big
       span Vehicle(s) Information
   fieldset.row.vehicle
+
+    .col-xs-12.section-rows.vehicle-label
+      .row.form-group
+        .col-xs-12.label-container
+          input.form-control(type='text' placeholder='Label' required)
+      .row
+        .col-xs-12.label-info
+          | (this is your vehicle nickname)
+
     .col-xs-12.section-rows
 
       - for i in ['Make', 'Model', 'Color', 'Year']
@@ -26,3 +35,11 @@ section.vehicle-information
                   | NY
         .col-xs-8
           input.form-control(type='text' placeholder='License PLate' required)
+
+    // Add another
+    .col-xs-12.section-rows.add-another-vehicle
+      .row.form-group
+        .col-xs-12
+            button type='button'
+              span.icon.add +
+              span.text Add another vehicle
