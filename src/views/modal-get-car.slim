@@ -6,7 +6,13 @@
         h4.modal-title
           span Get the car ready in:
       .modal-body.container-fluid.time-slots
-        - for time in ['15', '20', '25']
+        .row.slots
+          .col-xs-12.slot.active
+            span.sprite.sprite-checkmark-white
+            span.time
+              i.numeral 15
+              i.text &nbsp;minutes
+        - for time in ['20', '25']
           .row.slots
             .col-xs-12.slot
               span.sprite.sprite-checkmark-white
