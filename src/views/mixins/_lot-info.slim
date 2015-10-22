@@ -1,10 +1,21 @@
 .row.lot-info
   .col-xs-4.cell.lot-rating
     .image
-      img src='' height='200'
+      p No image
       span.rating
         - for i in (1..4)
           i.fa.fa-star
         i.fa.fa-star-o
-  .col-xs-4.cell.lot-info info
-  .col-xs-4.cell.lot-preference like/star
+  .col-xs-4.cell.lot-location
+    span.lot-name Icon Parking
+    address
+      span 133 E. 61st
+      span New York, NY 11223
+    span.phone-number
+      span.sprite.sprite-phone
+      span.number 212.555.5555
+  .col-xs-4.cell.lot-preference
+    .slot
+      span.sprite.sprite-i-blue
+    .slot
+      span.sprite.sprite-favorite-outline
