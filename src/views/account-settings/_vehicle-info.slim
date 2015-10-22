@@ -3,6 +3,10 @@ section.vehicle-information
     h2
       span.sprite.sprite-car-black-big
       span Vehicle(s) Information
+
+  / Added vehicle
+  include account-settings/_vehicle-added.slim
+
   fieldset.row.vehicle
 
     .col-xs-12.section-rows.vehicle-label
@@ -40,6 +44,6 @@ section.vehicle-information
     .col-xs-12.section-rows.add-another-vehicle
       .row.form-group
         .col-xs-12.add
-            button type='button'
+            button.add-vehicle-btn type='button'
               span.icon.add +
               span.text Add another vehicle

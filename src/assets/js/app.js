@@ -51,6 +51,17 @@ app.controller('parcMateController', function ($rootScope, $scope) {
 
   removeItem($scope);
 
+  // For presentation only NOT TO BE USED IN PROD
+  $scope.$on('$viewContentLoaded', function () {
+    $('.vehicle-toggle a').on('click', function () {
+      var self = $(this),
+          angleUp = 'icon-angle-up',
+          angleDown = 'icon-angle-down';
+      self.parent('.section-rows').siblings().toggle('fast');
+      return false;
+    });
+  });
+
   // Needed for the loading screen
   $rootScope.$on('$routeChangeStart', function(e, toState){
     $rootScope.loading = true;

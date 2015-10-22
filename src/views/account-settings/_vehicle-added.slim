@@ -1,0 +1,44 @@
+fieldset.row.vehicle.remove-vehicle
+
+  .col-xs-12.section-rows.vehicle-toggle
+    a.toggle href='#'
+      i.icon-angle-up
+      i Nickname
+
+  .col-xs-12.section-rows.vehicle-label
+    .row.form-group
+      .col-xs-12.label-container
+        input.form-control(type='text' placeholder='Label' required)
+    .row
+      .col-xs-12.label-info
+        | (this is your vehicle nickname)
+
+  .col-xs-12.section-rows
+    - for i in ['Make', 'Model', 'Color', 'Year']
+      .row.form-group
+        .col-xs-12.select-field
+          .mock-dropdown
+            i.icon-angle-down
+            select.form-control
+              option value='#{i}' #{i}
+              -for j in (1..10)
+                option(value='#{i}')
+                  | #{i}
+    .row.form-group
+      .col-xs-4.select-field.border-right
+        .mock-dropdown
+          i.icon-angle-down
+          select.form-control
+            -for i in (1..10)
+              option(value='#{i}')
+                | NY
+      .col-xs-8
+        input.form-control(type='text' placeholder='License PLate' required)
+
+  // Add another
+  .col-xs-12.section-rows.add-another-vehicle
+    .row.form-group
+      .col-xs-12.remove
+          button.remove-vehicle-btn type='button'
+            span.icon.remove -
+            span.text Remove vehicle
