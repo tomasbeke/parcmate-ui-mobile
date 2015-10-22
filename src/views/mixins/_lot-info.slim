@@ -1,4 +1,10 @@
 .row.lot-info
-  .col-xs-4.cell image
-  .col-xs-4.cell info
-  .col-xs-4.cell like/star
+  .col-xs-4.cell.lot-rating
+    .image
+      img src='' height='200'
+      span.rating
+        - for i in (1..4)
+          i.fa.fa-star
+        i.fa.fa-star-o
+  .col-xs-4.cell.lot-info info
+  .col-xs-4.cell.lot-preference like/star
