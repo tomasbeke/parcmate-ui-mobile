@@ -1,4 +1,11 @@
 .account-settings
+  .credit-card-information
+    .card-expiration
+      padding 0
+      background $gray-lighter
+      .select-field
+        background $white
+        border-bottom $gray-border
   .sign-up-form
     .add-another-vehicle
       .add
@@ -33,8 +40,19 @@
           padding 0
           height auto
           .checkbox-container
+            padding 0
+            .fa-checkbox
+              margin-top 5px
+              margin-left 5px
             input
-              margin 0
+              display none
+              + .fa-checkbox
+                &:before
+                  content '\f096'
+              &:checked
+                + .fa-checkbox
+                  &:before
+                    content '\f046'
   .section-header
     text-align center
     margin 0

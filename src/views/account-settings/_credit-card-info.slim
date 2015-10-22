@@ -5,8 +5,43 @@ section.credit-card-information
       span Credit Card Information
   fieldset.row
     .col-xs-12.section-rows
-      - for i in (1..5)
+      // Generic
+      - for i in (1..3)
         .row.form-group
           label.col-xs-4 Label
           .col-xs-8
             input.form-control type='text' placeholder='Placeholder Text'
+      // Expiration
+      .row.form-group.card-expiration
+        label.col-xs-4.expiration Expiration
+        .col-xs-4.select-field.border-right.month
+          .mock-dropdown
+            i.icon-angle-down
+            select.form-control
+              -for i in (1..10)
+                option(value='#{i}')
+                  | 10
+        .col-xs-4.select-field.year
+          .mock-dropdown
+            i.icon-angle-down
+            select.form-control
+              -for i in (1..10)
+                option(value='#{i}')
+                  | 2015
+      // Generic
+      - for i in (1..3)
+        .row.form-group
+          label.col-xs-4 Label
+          .col-xs-8
+            input.form-control type='text' placeholder='Placeholder Text'
+      // State
+      .row.form-group
+        .col-xs-6.select-field.border-right
+          .mock-dropdown
+            i.icon-angle-down
+            select.form-control
+              -for i in (1..10)
+                option(value='#{i}')
+                  | NY
+        .col-xs-6
+          input.form-control(type='text' placeholder='Zip' required)
