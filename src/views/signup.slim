@@ -1,7 +1,23 @@
-.scrollable-content.signup.checkin-out
+.scrollable-content.account-settings.signup
   .container-fluid
-    .row.masthead
+    header.row.masthead
       .col-xs-12.header
         h1
           span.sprite.sprite-check-in-black
           span Sign Up
+    / Start form
+    .row
+      .col-xs-12.sign-up-form
+        form#sign-up-form
+          section.basic-information
+            .section-header
+              h2
+                span.sprite.sprite-check-in-black
+                span Section Name
+            fieldset.row
+              .col-xs-12.section-rows
+                - for i in (1..5)
+                  .row.form-group
+                    label.col-xs-4 Label
+                    .col-xs-8
+                      input.form-control placeholder='Placeholder'
