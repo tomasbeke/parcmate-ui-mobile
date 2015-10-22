@@ -12,3 +12,20 @@
           include account-settings/_basic-info.slim
           include account-settings/_vehicle-info.slim
           include account-settings/_credit-card-info.slim
+          section.terms-conditions
+            fieldset.row
+              .col-xs-12.section-rows
+                .row.form-group
+                  .col-xs-1.checkbox-container
+                    input type='checkbox' id='terms-conditions'
+                  .col-xs-11.label-container
+                    label for='terms-conditions'
+                      | I agree to the&nbsp;
+                      a.terms href='#' terms and conditions
+
+
+    .row.multi-buttons
+      .col-xs-6.btn-container
+        button.btn.btn-default form='sign-up-form' type='reset' Cancel
+      .col-xs-6.btn-container
+        button.btn.btn-default form='sign-up-form' type='submit' Submit
