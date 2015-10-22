@@ -3,10 +3,26 @@ section.vehicle-information
     h2
       span.sprite.sprite-car-black-big
       span Vehicle(s) Information
-  fieldset.row
+  fieldset.row.vehicle
     .col-xs-12.section-rows
-      - for i in (1..5)
+
+      - for i in ['Make', 'Model', 'Color', 'Year']
         .row.form-group
-          label.col-xs-4 Label
-          .col-xs-8
-            input.form-control type='text' placeholder='Placeholder Text'
+          .col-xs-12.select-field
+            .mock-dropdown
+              i.icon-angle-down
+              select.form-control
+                option value='#{i}' #{i}
+                -for j in (1..10)
+                  option(value='#{i}')
+                    | #{i}
+      .row.form-group
+        .col-xs-4.select-field.border-right
+          .mock-dropdown
+            i.icon-angle-down
+            select.form-control
+              -for i in (1..10)
+                option(value='#{i}')
+                  | NY
+        .col-xs-8
+          input.form-control(type='text' placeholder='License PLate' required)
