@@ -5,6 +5,12 @@ section.basic-information
       span Basic Information
   fieldset.row
     .col-xs-12.section-rows
+      .row.form-group.error-state-message
+        .col-xs-12.message Incorrect field: .row .form-group elem :before
+      .row.form-group.error-state
+        label.col-xs-4 Error Example
+        .col-xs-8
+          input.form-control type='text' placeholder='Error prepends error'
       - for i in (1..5)
         .row.form-group
           label.col-xs-4 Label
