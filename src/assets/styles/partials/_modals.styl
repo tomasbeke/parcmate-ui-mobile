@@ -1,6 +1,7 @@
 .modal
   .modal-header
     border none
+    text-align center
     .modal-title
       font-size $font-size-large
   .modal-footer
@@ -82,8 +83,22 @@
 
 // Change Password
   .change-password-modal
-    .new-password-group
-      margin-top 15px
+    .form-group
+      border $gray-border
+      &.password-requirements
+        border none
+        height auto
+        color $gray-light
+        padding 15px 0
+    .old-password-group
+      &:first-child
+        margin-top 0
+      &:not(:first-child)
+        text-align center
+        border-top none
+        margin-bottom 30px
+    .btn-container
+      padding 0!important
 // Get Car Modal
   .get-car-modal
     .modal-title
