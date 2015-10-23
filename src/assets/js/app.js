@@ -27,6 +27,7 @@ app.config(function($routeProvider) {
     'checkout',
     'my-tab',
     'garage-info-window',
+    'popup-message',
     'modal-filter',
     'style-guide',
     'sprite-guide'
