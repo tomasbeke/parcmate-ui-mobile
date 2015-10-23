@@ -60,6 +60,10 @@ app.controller('parcMateController', function ($rootScope, $scope) {
       self.parent('.section-rows').siblings().toggle('fast');
       return false;
     });
+    $('.remove-vehicle-btn').on('click', function () {
+      $(this).parents('.remove-vehicle').remove();
+      return false;
+    })
   });
 
   // Needed for the loading screen
