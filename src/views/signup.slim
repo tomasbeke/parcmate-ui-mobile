@@ -22,7 +22,7 @@
                   .col-xs-11.label-container
                     label for='terms-conditions'
                       | I agree to the&nbsp;
-                      a.terms href='#' terms and conditions
+                      a.terms ui-turn-on='modal1' terms and conditions
 
 
     .row.multi-buttons
@@ -30,3 +30,7 @@
         button.btn.btn-default form='sign-up-form' type='reset' Cancel
       .col-xs-6.btn-container
         button.btn.btn-default form='sign-up-form' type='submit' Submit
+
+/ Include Modal for Get Car
+div(ui-content-for='modals')
+  div(ng-include="'modal-terms-conditions.html'")

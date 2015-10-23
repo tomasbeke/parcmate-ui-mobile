@@ -1,7 +1,14 @@
 .modal
   .modal-header
+    border none
+    .modal-title
+      font-size $font-size-large
   .modal-footer
     border 0 none
+    .btn-container
+      padding 0
+      &:first-child
+        padding-right 15px
   .modal-content
     border-radius 0
     p
@@ -58,6 +65,19 @@
           bottom 0
           text-align center
 
+// Terms and Conditions
+  .terms-conditions-modal
+    .modal-header
+      text-align center
+    .modal-body
+      padding-right 20px
+      margin-right 20px
+      padding-left 40px
+      margin-bottom 30px
+      max-height 400px
+      overflow-x scroll
+      p
+        margin-bottom 15px
 // Get Car Modal
   .get-car-modal
     .modal-title
