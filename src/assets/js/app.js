@@ -2,6 +2,7 @@
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.gestures.min.js'
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
 // @codekit-prepend '../../../bower_components/jquery/dist/jquery.min.js'
+// @codekit-prepend 'accordion.js'
 
 var app = angular.module('parcMate', [
   'ngRoute',
@@ -65,7 +66,10 @@ app.controller('parcMateController', function ($rootScope, $scope) {
     $('.remove-vehicle-btn').on('click', function () {
       $(this).parents('.remove-vehicle').remove();
       return false;
-    })
+    });
+
+    accordion.init();
+
   });
 
   // Needed for the loading screen
