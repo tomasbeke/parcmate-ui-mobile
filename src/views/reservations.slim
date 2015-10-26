@@ -1,0 +1,14 @@
+.scrollable-content.reservations
+  .container
+    .row
+      .col-xs-12.action
+        a.action-call(href='#/login')
+          span Garage Info/Reservation
+          i.fa.fa-chevron-left.pull-left
+    .row
+      .col-xs-12
+        form#make-reservation.reservations-form
+
+
+div(ui-content-for='modals')
+  div(ng-include="'modal.html'")
