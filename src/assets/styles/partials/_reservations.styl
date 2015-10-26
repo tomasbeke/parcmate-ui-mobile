@@ -9,6 +9,11 @@
     .info-section
       border-bottom 4px solid $black
       padding 15px
+      .section-body
+        display-type(none)
+      &.is-expanded
+        .section-body
+          display-type(block)
 
   .section-header
     text-align center
