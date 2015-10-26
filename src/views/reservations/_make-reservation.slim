@@ -4,6 +4,7 @@ section.reservation-info.make-reservation
     h2
       span.sprite.sprite-schedule-black
       span Make a Reservation
+  / Controls
   fieldset.row
     .col-xs-12.section-rows
       .row.form-group
@@ -30,8 +31,15 @@ section.reservation-info.make-reservation
           select.car-type
             - for i in (1..24)
               option value='#{i}' #{i}h
+  / Rate Info
   fieldset.row.rate-info
     .col-xs-12.section-rows
       .row.form-group
         .col-xs-6 Base rate:
         .col-xs-6 $16.00
+
+  / Reserve Button
+  fieldset.row.form-submit
+    .col-xs-12
+      button.btn.btn-default type='submit' Reserve your space
+    .col-xs-12.message Lorem ipsum dolor sit amet, consectetur adipisicing elit.
