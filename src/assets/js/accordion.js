@@ -19,7 +19,8 @@ var accordion = {
 
     if (!$elParent.hasClass('is-expanded')) {
       $elParent.addClass('is-expanded');
-      $elSiblings.removeClass('is-expanded');
+      // optional close
+      // $elSiblings.removeClass('is-expanded');
       $elArrow.removeClass('icon-angle-down').addClass('icon-angle-up');
     } else {
       $elParent.removeClass('is-expanded');
