@@ -23,6 +23,7 @@ app.config(function($routeProvider) {
     'forgot-password',
     'find-garage',
     'signup',
+    'reservations',
     'checkin',
     'checkout',
     'my-tab',
