@@ -4,7 +4,11 @@ var accordion = {
     this.bindEvents();
     console.log(this)
   },
-  cacheDom : function (e) {},
-  bindEvents : function (e) {},
+  cacheDom : function () {
+    this.$elTrigger = $('.js-accordion-trigger');
+  },
+  bindEvents : function () {
+    this.$elTrigger.on('click', this.elExpand);
+  },
   elExpand : function (e) {}
 };

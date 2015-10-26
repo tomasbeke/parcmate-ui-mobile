@@ -1,0 +1,32 @@
+/ Make Reservation
+section.reservation-info.make-reservation
+  .section-header
+    h2
+      span.sprite.sprite-basic-info
+      span Make a Reservation
+  fieldset.row
+    .col-xs-12.section-rows
+      .row.form-group
+        .col-xs-4.control.my-car
+          span.sprite.sprite-car-two
+          span.control-text
+            i.icon-angle-down
+            |&nbsp;my car
+          select.car-type
+            - for i in ['Car Make','Car Make','Car Make','Car Make','Car Make','Car Make','Car Make','Car Make']
+              option value='#{i}' #{i}
+        .col-xs-4.control.arrive-by
+          span.sprite
+          span.control-text
+            i.icon-angle-down
+            |&nbsp;arrive by
+          input type='datetime' name='datetime' value=''
+
+        .col-xs-4.control.duration
+          span.sprite
+          span.control-text
+            i.icon-angle-down
+            |&nbsp;duration
+          select.car-type
+            - for i in (1..24)
+              option value='#{i}' #{i}h

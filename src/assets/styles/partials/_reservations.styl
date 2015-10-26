@@ -3,8 +3,50 @@
     display none
 .reservations-container
   background $white
+  .section-header
+    text-align center
+    padding 15px 0
+    h2
+      padding 0
+      margin 0
+      font-size $font-size-large
+      span
+        display-type(inline-block)
+        vertical-align middle
+      .sprite
+        margin-right 10px
   .lot-info
     margin-top 30px
     margin-bottom 30px
   .reservations-form
+    padding 0
     background $white
+    .make-reservation
+      .row
+        border-top $gray-border
+      .control
+        .sprite
+          display-type(inline-block)
+        border-right $gray-border
+        min-height 90px
+        padding-bottom 10px
+        padding-top 10px
+        text-align center
+        &:last-child
+          border none
+        input
+        select
+          color $blue
+          font-weight $font-bold
+          margin 0
+          font-size $font-size-large
+          border 0 none
+        .control-text
+          color $blue
+          display block
+          font-size $font-size-base
+    .section-rows
+      .form-group
+        margin 0
+        height auto
+        border 0
