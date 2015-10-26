@@ -58,16 +58,21 @@ app.controller('parcMateController', function ($rootScope, $scope) {
   $scope.$on('$viewContentLoaded', function () {
     $('.vehicle-toggle a').on('click', function () {
       var self = $(this),
-          angleUp = 'icon-angle-up',
-          angleDown = 'icon-angle-down';
-      self.parent('.section-rows').siblings().toggle('fast');
+          icon = self.find('.icon');
+      self.parent('.section-rows').siblings().toggle('fast', function () {
+        if ($(this).is(':visible')) {
+          icon.removeClass('icon-angle-down').addClass('icon-angle-up');
+        } else {
+          icon.removeClass('icon-angle-up').addClass('icon-angle-down');
+        }
+      });
       return false;
     });
     $('.remove-vehicle-btn').on('click', function () {
       $(this).parents('.remove-vehicle').remove();
       return false;
     });
-
+    
     accordion.init();
 
   });
