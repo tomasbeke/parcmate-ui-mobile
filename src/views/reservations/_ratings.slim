@@ -15,11 +15,11 @@
       .col-xs-12.ratings-content
         - for i in (1..5)
           .row
-            .col-xs-4.col
+            .col-xs-4.col-md-2.col
               .ratings-stars
                 - for i in (1..5)
                   i.fa.fa-star
-            .col-xs-6.col
+            .col-xs-6.col-md-8.col
               span.ratings-bar-container
                 span.ratings-bar style='width: #{i}0%'
             .col-xs-2.col 100
