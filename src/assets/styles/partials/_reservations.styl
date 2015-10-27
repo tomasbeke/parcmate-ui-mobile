@@ -8,9 +8,22 @@
   .information
     .info-section
       border-bottom 4px solid $black
-      padding 15px
+      padding 15px 15px 0
       h3
+        position relative
         margin 0
+        padding-bottom 15px
+        .ratings-preview
+          position absolute
+          right 0
+          top 4px
+          color $black
+          font-size $font-size-large
+          .ratings-stars
+            margin-right 40px
+            .fa
+              font-size $font-size-large
+              color $gray
         a
           color $black
           font-weight $font-light
@@ -19,7 +32,16 @@
       .toggle
         display-type(block)
       .section-body
-        display-type(none)
+        display-type(block)
+        background $white
+        border-top 4px solid $black
+        .col
+          padding 15px
+          .ratings-stars
+            text-align right
+            .fa
+              font-size $font-size-large
+              color $gray
       &.is-expanded
         .section-body
           display-type(block)
