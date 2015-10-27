@@ -95,6 +95,14 @@
   .reservations-form
     padding 0
     .make-reservation
+      .reservation-controls
+        .section-rows
+          padding 0
+          .error-container
+            background $red
+            color $white
+            text-align center
+            padding 15px
       .row
         border-top $gray-border
         background $white
@@ -121,10 +129,14 @@
           .form-group
             padding 15px 0
       .control
+        &.error
+          border 2px solid $red
+          border-top 0
+          background $white
         .sprite
           display-type(inline-block)
         border-right $gray-border
-        min-height 90px
+        min-height 100px
         padding-bottom 10px
         padding-top 10px
         text-align center

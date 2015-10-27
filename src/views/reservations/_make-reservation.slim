@@ -5,8 +5,10 @@ section.reservation-info.make-reservation
       span.sprite.sprite-schedule-black
       span Make a Reservation
   / Controls
-  fieldset.row
+  fieldset.row.reservation-controls
     .col-xs-12.section-rows
+      .row.form-group.error-container
+        .col-xs-12 Error Message
       .row.form-group
         .col-xs-4.control.my-car
           span.sprite.sprite-car-two
@@ -16,7 +18,7 @@ section.reservation-info.make-reservation
           select.car-type
             - for i in ['Car Make','Car Make','Car Make','Car Make','Car Make','Car Make','Car Make','Car Make']
               option value='#{i}' #{i}
-        .col-xs-4.control.arrive-by
+        .col-xs-4.control.arrive-by.error
           span.sprite.sprite-clock-blue
           span.control-text
             i.icon-angle-down
