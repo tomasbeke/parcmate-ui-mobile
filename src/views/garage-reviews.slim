@@ -3,23 +3,27 @@
     .row
       .col-xs-12.action
         a.action-call(href='#/')
-          span Garage Info/Reservation
+          span Garage Reviews
           i.fa.fa-chevron-left.pull-left
-    / Lot Info
-    include mixins/_lot-info.slim
-    / Accordion
-    .row.make-reservation
-      .col-xs-12.reservations-form
-        form#make-reservation
-          include reservations/_make-reservation.slim
-
-
-    / Accordion
-    .row.information
-      .section-header.col-xs-12
-        h2
-          span.sprite.sprite-i-black
-          span Information
-
-div(ui-content-for='modals')
-  div(ng-include="'modal.html'")
+    / Filter form
+    .row.filter-sort-reviews
+      .col-xs-12
+        form#filter-reviews
+          section
+            fieldset.row
+              .col-xs-12.section-rows
+                .row.form-group
+                  .col-xs-6.control
+                    span.control-text
+                      i.icon-angle-down
+                      |&nbsp;sort by
+                    select
+                      - for i in (1..10)
+                        option value='#{i}' value #{i}
+                  .col-xs-6.control
+                    span.control-text
+                      i.icon-angle-down
+                      |&nbsp;filter by
+                    select
+                      - for i in (1..10)
+                        option value='#{i}' value #{i}

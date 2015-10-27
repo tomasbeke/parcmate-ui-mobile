@@ -25,6 +25,7 @@ app.config(function($routeProvider) {
     'find-garage',
     'signup',
     'reservations',
+    'garage-reviews',
     'checkin',
     'checkout',
     'my-tab',
@@ -72,7 +73,7 @@ app.controller('parcMateController', function ($rootScope, $scope) {
       $(this).parents('.remove-vehicle').remove();
       return false;
     });
-    
+
     accordion.init();
 
   });
