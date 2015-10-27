@@ -12,12 +12,14 @@
           i.fa.fa-star-o
         span.ratings-counter 300 Ratings
     .section-body.row
-      .col-xs-12
+      .col-xs-12.ratings-content
         - for i in (1..5)
           .row
             .col-xs-4.col
               .ratings-stars
                 - for i in (1..5)
                   i.fa.fa-star
-            .col-xs-6.col 2
+            .col-xs-6.col
+              span.ratings-bar-container
+                span.ratings-bar style='width: #{i}0%'
             .col-xs-2.col 100

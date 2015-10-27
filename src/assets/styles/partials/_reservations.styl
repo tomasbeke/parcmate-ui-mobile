@@ -32,11 +32,24 @@
       .toggle
         display-type(block)
       .section-body
+        .ratings-content
+          padding 15px
         display-type(block)
         background $white
         border-top 4px solid $black
+        .ratings-bar-container
+          width 100%
+          background $gray-lighter
+          height 20px
+          display-type(block)
+          position relative
+          .ratings-bar
+            position absolute
+            background $gray-light
+            height inherit
+            display-type(block)
         .col
-          padding 15px
+          padding 5px 15px
           .ratings-stars
             text-align right
             .fa
