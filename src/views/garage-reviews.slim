@@ -20,12 +20,6 @@
         h2
           span.sprite.sprite-i-black
           span Information
-      include reservations/_ratings.slim
-      include reservations/_daily-rates.slim
-      include reservations/_monthly-rates.slim
-      include reservations/_additional-info.slim
-      include reservations/_notes.slim
 
 div(ui-content-for='modals')
   div(ng-include="'modal.html'")
-  div(ng-include="'modal-dual-buttons.html'")
