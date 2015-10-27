@@ -1,6 +1,13 @@
-/ Ratings
-section.reservation-info.reservation-notes
-  fieldset.row
-    .col-xs-12.section-rows
-      .row.form-group
-        .col-xs-12 col-xs-12 in form group
+/ Notes
+.info-section.col-xs-12
+  .notes
+    h3
+      a.toggle.js-trigger
+        i.icon.icon-angle-down
+        span.text Notes
+    .section-body.row
+      .col-xs-12.rates-table
+        .row
+          - for i in (1..5)
+            .col-xs-12.note
+              span Note #{i}
