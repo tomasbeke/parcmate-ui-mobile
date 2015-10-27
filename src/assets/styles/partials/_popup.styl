@@ -1,7 +1,4 @@
 .popup-view
-  position absolute
-  top 150px
-  right 0
   width 300px
   .splash-popup
     &.splash-popup-error
@@ -10,12 +7,24 @@
       background $light-orange
     &.splash-popup-message
       background $light-blue
-    &.splash-popup-success
+    &.splash-popup-sucsess
       background $light-green
     color $white
     padding 15px
+    border $white-border
+    box-shadow 1px 1px 1px 1px $gray-light
     p
       margin-bottom 0
+    .splash-header
+      margin-bottom 5px
+      .sprite
+        display-type(inline-block)
+      button
+        background none
+        border none
+        padding 0
+        float right
+        font-size $font-size-large
     .splash-title
       background $transparent
       font-size $font-size-large

@@ -1,9 +1,14 @@
-.popup-view
-  .splash-popup.splash-popup-error
-    .splash-header
-      .sprite.sprite-popup-error
-      button close
-    .splash-title
-      p Donec id elit non mi porta gravida at eget metus.
-    .splash-message
-      p Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra.
+.scrollable-content
+  .container-fluid
+    .row
+      - for i in ['error', 'warning', 'message', 'sucsess']
+        .col-xs-12
+          .popup-view
+            .splash-popup(class='splash-popup-#{i}')
+              .splash-header
+                .sprite(class='sprite-popup-#{i}')
+                button &times;
+              .splash-title
+                p Donec id elit non mi porta gravida at eget metus.
+              .splash-message
+                p Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra.
