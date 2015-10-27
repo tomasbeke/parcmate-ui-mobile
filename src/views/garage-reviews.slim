@@ -1,4 +1,4 @@
-.scrollable-content.reservations-container
+.scrollable-content.garage-reviews
   .container-fluid
     .row
       .col-xs-12.action
@@ -7,23 +7,30 @@
           i.fa.fa-chevron-left.pull-left
     / Filter form
     .row.filter-sort-reviews
-      .col-xs-12
-        form#filter-reviews
-          section
-            fieldset.row
-              .col-xs-12.section-rows
-                .row.form-group
-                  .col-xs-6.control
-                    span.control-text
-                      i.icon-angle-down
-                      |&nbsp;sort by
-                    select
-                      - for i in (1..10)
-                        option value='#{i}' value #{i}
-                  .col-xs-6.control
-                    span.control-text
-                      i.icon-angle-down
-                      |&nbsp;filter by
-                    select
-                      - for i in (1..10)
-                        option value='#{i}' value #{i}
+      .col-xs-6.control
+        span.control-text
+          i.icon-angle-down
+          |&nbsp;sort by
+        select
+          - for i in (1..10)
+            option value='#{i}' Date/Time
+      .col-xs-6.control
+        span.control-text
+          i.icon-angle-down
+          |&nbsp;filter by
+        select
+          - for i in (1..10)
+            option value='#{i}' All Ratings
+    .row.reviews
+      .col-xs-12.reviews-container
+        - for i in (1..5)
+          .row.review
+            .col-xs-12
+              .rating
+                - for i in (1..5)
+                  i.fa.fa-star
+              .byline
+                span By &nbsp;
+                strong Name - &nbsp;
+                time datetime='2008-02-14 20:00' February 14, 2008
+              .review-content Nulla vitae elit libero,Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum.
