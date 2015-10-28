@@ -162,9 +162,11 @@
               &.upcoming-rate-changes
                 background $gray-lighter
                 .content
-                  display-type(flex)
+                  &.row
+                    margin 0
+                  //display-type(flex) android issue
                   .slot
-                    flex-grow(1, 0)
+                    //flex-grow(1, 0)
                     .price
                       font-size $font-size-large
                       font-weight $font-bold
