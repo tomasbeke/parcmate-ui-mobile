@@ -1,0 +1,22 @@
+.scrollable-content.account-settings.contact-us
+  .container-fluid
+    header.row.masthead
+      .col-xs-12.header
+        h1
+          span.sprite.sprite-contact-us
+          span Contact Us
+
+    .row
+      .col-xs-12.contact-info
+        .row
+          .col-xs-12.field
+            .row
+              .col-xs-4.field-label Phone
+              .col-xs-8.field-info
+                a href='' 212.555.5555
+                span Business hours from 9 am to 5 pm EST
+
+/ Include Modal for Get Car
+div(ui-content-for='modals')
+  div(ng-include="'modal-terms-conditions.html'")
+  div(ng-include="'modal-change-password.html'")
