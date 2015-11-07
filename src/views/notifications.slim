@@ -5,26 +5,27 @@
         h1
           span.sprite.sprite-notifications
             span.counter
-              i 1
+              i 12
           span Notifications
 
     .row
       .col-xs-12.notifications-queue
-        .row.notification
-          .col-xs-12
-            .row.header
-              .col-xs-6
-                span.new
-                span.date-time
-                  i.date Today
-                  i.time 1:35pm
-              .col-xs-6
-                span.sprite
-                span.car-make Mercedes-Benz
-            .content
-              span.message Car ready for pick up
-              address
-                span Icon Parking
-                span 133 E. 61 st
-                span New York, NY, 11223
-              a href='' 212.555.5555
+        - for i in (1..12)
+          .row.notification
+            .col-xs-12
+              .row.header
+                .col-xs-6.date-time-info
+                  span.new
+                  span.date-time
+                    i.date Today
+                    i.time 1:35pm
+                .col-xs-6.car-info
+                  span.sprite.sprite-car-gray
+                  span.car-make Mercedes-Benz
+              .content
+                span.message Car ready for pick up
+                address
+                  span Icon Parking
+                  span 133 E. 61 st
+                  span New York, NY, 11223
+                a href='' 212.555.5555
