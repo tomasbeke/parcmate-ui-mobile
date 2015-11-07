@@ -16,7 +16,8 @@ var tabs = {
         $elClass = $el.attr('class'),
         $elParent = $el.parents('.tab'),
         $elSiblings = $elParent.siblings(),
-        $tabsContainer = $('.tabs-container');
+        $tabsContainer = $('.tabs-container'),
+        $elSprite = $el.siblings('.sprite');
 
     $elSiblings.removeClass('active')
     $elParent.addClass('active')
@@ -25,5 +26,6 @@ var tabs = {
                   .addClass('active')
                   .siblings()
                   .removeClass('active');
+
   }
 };

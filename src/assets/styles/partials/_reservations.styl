@@ -166,13 +166,26 @@
   .tab
     text-align center
     padding 15px
+    min-height 75px
     box-shadow-border($gray-lighter)
     .sprite
       margin 0 auto!important
     a
       margin 5px auto 0
       display block
+  .sprite-reservations-tab-active
+  .sprite-favorites-tab-active
+  .sprite-history-tab-active
+    display none
   .active
     background $blue
+    .sprite-reservations-tab
+    .sprite-favorites-tab
+    .sprite-history-tab
+      display none
+    .sprite-reservations-tab-active
+    .sprite-favorites-tab-active
+    .sprite-history-tab-active
+      display block
     a
       color $white
