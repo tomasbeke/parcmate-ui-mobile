@@ -5,6 +5,7 @@ body (class='has-class-{{ state }}' ui-sref-active='mapBody' ng-app='parcMate' n
 
   / App wrapper
   main.app
+    / Nav
     include views/_navbar.slim
     / App body
     .scrollable
@@ -12,5 +13,5 @@ body (class='has-class-{{ state }}' ui-sref-active='mapBody' ng-app='parcMate' n
         .app-content-loading(ng-show="loading")
         .app-content
           ng-view
-  / Footer
-  include views/_footer.slim
+    / Footer
+    include views/_footer.slim
