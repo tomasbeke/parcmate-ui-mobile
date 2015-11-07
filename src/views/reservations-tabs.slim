@@ -1,0 +1,19 @@
+.scrollable-content.reservations-container
+  .container-fluid
+    .row
+      .col-xs-12.action
+        a.action-call(href='#/')
+          span Garage Info/Reservation
+          i.fa.fa-chevron-left.pull-left
+    / Lot Info
+    include mixins/_lot-info.slim
+    / Accordion
+    .row.make-reservation
+      .col-xs-12.reservations-form
+        form#make-reservation
+          include reservations/_make-reservation.slim
+
+
+div(ui-content-for='modals')
+  div(ng-include="'modal.html'")
+  div(ng-include="'modal-dual-buttons.html'")
