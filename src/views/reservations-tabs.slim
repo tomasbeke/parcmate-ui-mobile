@@ -1,13 +1,21 @@
 .scrollable-content.reservations-tabs
   .container-fluid
+    / Masthead
     .row.masthead
       .col-xs-12.header
         .row.tabs
           .col-xs-3
-          .col-xs-3.tab.reservations-tab 1
-          .col-xs-3.tab.favorites-tab 2
-          .col-xs-3.tab.history-tab 3
-
+          .col-xs-3.tab
+            a.reservations-tab href='' 1
+          .col-xs-3.tab
+            a.favorites-tab href='' 2
+          .col-xs-3.tab
+            a.history-tab href='' 3
+    / Tabs Container
+    .row.tabs-container
+      .col-xs-12.reservations-tab 1
+      .col-xs-12.favorites-tab 2
+      .col-xs-12.history-tab 3
 
 div(ui-content-for='modals')
   div(ng-include="'modal.html'")

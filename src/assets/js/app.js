@@ -3,6 +3,7 @@
 // @codekit-prepend '../../../bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.core.min.js'
 // @codekit-prepend '../../../bower_components/jquery/dist/jquery.min.js'
 // @codekit-prepend 'accordion.js'
+// @codekit-prepend 'tabs.js'
 
 var app = angular.module('parcMate', [
   'ngRoute',
@@ -77,7 +78,9 @@ app.controller('parcMateController', function ($rootScope, $scope) {
       return false;
     });
 
+    // For presentation only
     accordion.init();
+    tabs.init();
 
   });
 
