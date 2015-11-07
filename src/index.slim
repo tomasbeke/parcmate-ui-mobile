@@ -4,8 +4,8 @@ body (class='has-class-{{ state }}' ui-sref-active='mapBody' ng-app='parcMate' n
   include views/_sidebar.slim
 
   / App wrapper
-  include views/_navbar.slim
   main.app
+    include views/_navbar.slim
     / App body
     .scrollable
       section.app-body ng-class="{loading: loading}"
