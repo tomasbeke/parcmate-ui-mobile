@@ -4,6 +4,7 @@
       .sprite
         position relative
         overflow visible
+        margin-right 20px!important
       .counter
         background $red
         color $white
@@ -22,6 +23,18 @@
     .notifications-queue
       background $white
       margin-top 15px
+      .notification
+        border-bottom $gray-border
+        .header
+          padding-top 15px
+        .content
+          padding 15px 0
+          .message
+            font-weight $font-bold
+            font-size $font-size-large
+      address
+        span
+          display block
   &.contact-us
     .contact-info
       margin 15px 0
