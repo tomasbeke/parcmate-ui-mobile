@@ -5,12 +5,15 @@
       .col-xs-12.header
         .row.tabs
           .col-xs-3
-          .col-xs-3.tab
-            a.reservations-tab href='' 1
-          .col-xs-3.tab
-            a.favorites-tab href='' 2
-          .col-xs-3.tab
-            a.history-tab href='' 3
+          .col-xs-3.tab role='navigation'
+            span.sprite.sprite-reservations-tab
+            a.reservations-tab href='' Reservations
+          .col-xs-3.tab role='navigation'
+            span.sprite.sprite-reservations-tab
+            a.favorites-tab href='' Favorites
+          .col-xs-3.tab role='navigation'
+            span.sprite.sprite-reservations-tab
+            a.history-tab href='' History
     / Tabs Container
     .row.tabs-container
       .col-xs-12.reservations-tab 1
