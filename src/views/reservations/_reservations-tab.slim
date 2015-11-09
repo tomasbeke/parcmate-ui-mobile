@@ -1,0 +1,32 @@
+.col-xs-12.reservations-tab.tab-container.active
+  .row
+    - for i in (1..4)
+      .col-xs-12.reservation
+        .row
+          .col-xs-4.date-time
+            span.sprite.sprite-clock-my-tab-black
+            span.date
+              i.month Sep&nbsp;
+              i.numeral 18
+            span.day Tuesday
+            span.time
+              i.hour 6&nbsp;
+              i.minute 00&nbsp;
+              i.meridiem PM
+
+          .col-xs-4.lot-location
+            span.sprite.sprite-small-parking-pin
+            address
+              span.name Icon Parking
+              span 133 E 61st
+              span New York, NY
+
+          .col-xs-4.car-info
+            .car-make
+              span.sprite.sprite-small-car-black
+              span.name Mercedes-Benz
+            .controls
+              .edit
+                a href='#' Edit
+              .remove
+                button.icon.close &times;
