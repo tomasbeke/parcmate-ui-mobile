@@ -300,11 +300,14 @@
       .row-bottom
         border-top $gray-border
       .col
+        .sprite
+          display inline-block
         text-align center
         padding 15px
         &:not(:last-child)
           border-right $gray-border
         span
+        strong
           display block
       .car-type
         .sprite
@@ -312,5 +315,4 @@
           margin-right 10px
           vertical-align middle
         .car
-          font-weight $font-bold
           display inline-block
