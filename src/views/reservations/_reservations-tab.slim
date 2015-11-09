@@ -1,4 +1,19 @@
 .col-xs-12.reservations-tab.tab-container.active
+  .row.filter-controls
+    .col-xs-6.control
+      span.control-text
+        i.icon-angle-down
+        |&nbsp;sort by
+      select
+        - for i in (1..10)
+          option value='#{i}' Date/Time
+    .col-xs-6.control
+      span.control-text
+        i.icon-angle-down
+        |&nbsp;filter by
+      select
+        - for i in (1..10)
+          option value='#{i}' All Ratings
   .row
     - for i in (1..4)
       .col-xs-12.reservation

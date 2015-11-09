@@ -177,8 +177,10 @@
   .sprite-favorites-tab-active
   .sprite-history-tab-active
     display none
+  .masthead
+    .active
+      background $blue
   .active
-    background $blue
     .sprite-reservations-tab
     .sprite-favorites-tab
     .sprite-history-tab
@@ -193,6 +195,23 @@
     display none
     &.active
       display block
+
+  // Filter Conttrols
+  .filter-controls
+    margin 15px -15px 30px
+    background $white
+    .control
+      padding 15px 0
+      &:first-child
+        border-right $gray-border
+      span
+      select
+        color $blue
+      select
+        font-size $font-size-large
+      span
+        display block
+      text-align center
   // Reservation Tab
   .reservations-tab
     .reservation
