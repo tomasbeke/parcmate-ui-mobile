@@ -13,3 +13,27 @@
     .col-xs-2.control
       a href=''
         span.sprite.sprite-locate-me
+  / Lot Info
+  - for i in (1..4)
+    .row.lot-info
+      .col-xs-5.cell.lot-rating
+        .image
+          p No image
+          span.rating
+            - for i in (1..4)
+              i.fa.fa-star
+            i.fa.fa-star-o
+      .col-xs-5.cell.lot-location
+        span.lot-name Icon Parking
+        address
+          span 133 E. 61st
+          span New York, NY 11223
+        span.phone-number
+          span.sprite.sprite-phone
+          a href=''
+            span.number 212.555.5555
+      .col-xs-2.cell.lot-preference
+        .slot
+          button.icon.close &times;
+        .slot
+          span.sprite.sprite-chedule-blue
