@@ -4,8 +4,8 @@
     .row.masthead
       .col-xs-12.header
         .row.tabs
-          .col-xs-3
-          .col-xs-3.tab.active role='navigation'
+          .col-xs-2
+          .col-xs-4.tab.active role='navigation'
             span.sprite.sprite-reservations-tab-active
             span.sprite.sprite-reservations-tab
             a.reservations-tab href='' Reservations
@@ -19,7 +19,7 @@
             a.history-tab href='' History
     / Tabs Container
     .row.tabs-container
-      include reservations/_reservations-tab.slim
+      /include reservations/_reservations-tab.slim
       include reservations/_favorites-tab.slim
       include reservations/_history-tab.slim
 

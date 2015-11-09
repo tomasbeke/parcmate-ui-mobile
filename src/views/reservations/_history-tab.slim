@@ -1,1 +1,9 @@
 .col-xs-12.history-tab.tab-container
+  .row.filter-controls
+    .col-xs-12.control
+      span.control-text
+        i.icon-angle-down
+        |&nbsp;sort by
+      select
+        - for i in (1..10)
+          option value='#{i}' Date/Time

@@ -1,1 +1,15 @@
-.col-xs-12.favorites-tab.tab-container
+.col-xs-12.favorites-tab.tab-container.active
+  .row.filter-controls
+    .col-xs-8.control
+      span.control-text
+        i.icon-angle-down
+        |&nbsp;sort by
+      select
+        - for i in (1..10)
+          option value='#{i}' Location closest to:
+    .col-xs-2.control
+      a href=''
+        span.sprite.sprite-search-glass
+    .col-xs-2.control
+      a href=''
+        span.sprite.sprite-locate-me

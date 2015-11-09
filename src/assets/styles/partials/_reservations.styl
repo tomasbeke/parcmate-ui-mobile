@@ -203,8 +203,9 @@
     background $white
     .control
       flex-grow(1, 0)
+      min-height 75px
       padding 15px 0
-      &:first-child
+      &:not(:last-child)
         border-right $gray-border
       span
       select
@@ -272,3 +273,11 @@
               border-left $gray-border
               .icon.close
                 background $gray-dark
+
+  // Favorites Tab
+  .favorites-tab
+    .filter-controls
+      display block
+      .control
+        .sprite
+          display inline-block
