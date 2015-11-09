@@ -189,3 +189,61 @@
       display block
     a
       color $white
+  .tab-container
+    display none
+    &.active
+      display block
+  // Reservation Tab
+  .reservations-tab
+    .reservation
+      margin 0
+      .row
+        padding-bottom 15px
+        background $gray-lighter
+        display-type(flex)
+        > div
+          margin 0
+          padding-top 15px
+          padding-bottom 15px
+          box-shadow-border($gray-lighter)
+          background $white
+          text-align center
+          .sprite
+            display-type(inline-block)
+      .date-time
+        color $black
+        span
+          display-type(block)
+          &.date
+            font-weight $font-bold
+          &.time
+            font-size $font-size-large
+            font-weight $font-light
+      .lot-location
+        .sprite
+          width 20px
+          height 25px
+        color $blue
+        address
+          .name
+            font-weight $font-bold
+          span
+            display-type(block)
+      .car-info
+        padding 0!important
+        span
+          display-type(block)
+        .car-make
+          border-bottom $gray-border
+          padding 15px 0
+          .name
+            font-weight $font-bold
+        .controls
+          flex-display(center)
+          > div
+            padding 10px 0
+            width 50%
+            &:last-child
+              border-left $gray-border
+              .icon.close
+                background $gray-dark
