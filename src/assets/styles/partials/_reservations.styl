@@ -198,9 +198,11 @@
 
   // Filter Conttrols
   .filter-controls
+    display flex
     margin 15px -15px 30px
     background $white
     .control
+      flex-grow(1, 0)
       padding 15px 0
       &:first-child
         border-right $gray-border
@@ -212,6 +214,7 @@
       span
         display block
       text-align center
+
   // Reservation Tab
   .reservations-tab
     .reservation
@@ -262,6 +265,7 @@
             color $blue
           flex-display(center)
           > div
+            flex-grow(1,0)
             padding 10px 0
             width 50%
             &:last-child
