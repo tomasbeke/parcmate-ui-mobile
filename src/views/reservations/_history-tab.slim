@@ -1,4 +1,4 @@
-.col-xs-12.history-tab.tab-container
+.col-xs-12.history-tab.tab-container.active
   .row.filter-controls
     .col-xs-12.control
       span.control-text
@@ -7,3 +7,20 @@
       select
         - for i in (1..10)
           option value='#{i}' Date/Time
+  - for i in (1..6)
+    .row.history-lot-info
+      .col-xs-12.row-top
+        .row
+          .col-xs-3.col
+            span.date Sep. 17
+            span.year 2015
+            span.time 4:00 pm
+          .col-xs-3.col 2
+          .col-xs-3.col 3
+          .col-xs-3.col 4
+      .col-xs-12.row-bottom
+        .row
+          .col-xs-6.col.car-type
+            span.sprite.sprite-car-black-big
+            span.car Mercedes-Benz
+          .col-xs-6.col 2
