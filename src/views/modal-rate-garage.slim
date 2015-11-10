@@ -1,0 +1,28 @@
+.modal ui-if='modal1' ui-state='modal1'
+  .modal-backdrop.in
+  .modal-dialog
+    .modal-content.rate-garage
+      .modal-header
+        button.close ui-turn-off='modal1'  &times;
+        h4.modal-title Rate Garage
+      .modal-body.container-fluid
+        .row.garage
+          .col-xs-4.image
+            img
+          .col-xs-8.address
+            address
+              strong.lot-name Icon Parking
+              span 133 E. 61st
+              span New York, NY 11223
+        .row.rate-it
+          .col-xs-12
+            span Rate it
+            .stars
+              - for i in (1..4)
+                i.fa.fa-star
+              i.fa.fa-star-o
+        .row.review
+          .col-xs-12
+            textarea.form-control rows='5' id='comment' placeholder='Write review here'
+      .modal-footer
+        button.btn.btn-default(ui-turn-off='modal1') Submit

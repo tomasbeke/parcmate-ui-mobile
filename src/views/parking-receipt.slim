@@ -8,9 +8,9 @@
 
     .row.multi-buttons.masthead
       .col-xs-6.btn-container
-        button.btn.btn-default(ui-turn-off='modal1' type='button') Print
+        button.btn.btn-default type='button' Print
       .col-xs-6.btn-container
-        button.btn.btn-default(ui-turn-off='modal2' type='button') Email
+        button.btn.btn-default type='button' Email
     / Sections
     .row.receipt-section.basic-info
       .col-xs-12.col
@@ -45,7 +45,7 @@
         .row
           .col-xs-12
             span.fa.fa-star-o
-            a href='' Rate it
+            a ui-turn-on='modal1' href='' Rate it
     .row.receipt-section.time-in-out
       .col-xs-12.col
         .row
@@ -84,5 +84,4 @@
 
 
 div(ui-content-for='modals')
-  div(ng-include="'modal.html'")
-  div(ng-include="'modal-dual-buttons.html'")
+  div(ng-include="'modal-rate-garage.html'")
