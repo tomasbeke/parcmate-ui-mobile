@@ -1,0 +1,13 @@
+.scrollable-content.reservations-container.parking-receipt
+  .container-fluid
+    .row
+      .col-xs-12.action
+        a.action-call(href='#/')
+          span Parking Receipt
+          i.fa.fa-chevron-left.pull-left
+
+
+
+div(ui-content-for='modals')
+  div(ng-include="'modal.html'")
+  div(ng-include="'modal-dual-buttons.html'")

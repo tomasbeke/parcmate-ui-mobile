@@ -27,6 +27,7 @@ app.config(function($routeProvider) {
     'signup',
     'reservations',
     'reservations-tabs',
+    'parking-receipt',
     'garage-reviews',
     'checkin',
     'checkout',
