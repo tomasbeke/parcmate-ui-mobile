@@ -320,6 +320,7 @@
 
 // Parking Receipt
 .parking-receipt
+  padding-bottom 15px
   .sprite
     display inline-block
   .masthead
@@ -339,3 +340,36 @@
       text-align center
       padding 15px 0
       border-bottom 8px solid $black
+      .row
+        border-bottom 1px solid #000
+    &.basic-info
+      .row
+        padding 5px 0
+      .car
+        padding 15px 0 0
+        .sprite
+          margin-right 10px
+          vertical-align middle
+        .car-type
+          font-size $font-size-large
+          .model
+            text-transform uppercase
+      .date
+        padding 0 0 15px
+        border-bottom 1px solid #000
+        font-size $font-size-xx-large
+    &.garage-info
+      address
+        padding 15px 0
+      .sprite
+        vertical-align middle
+        margin-right 10px
+      font-size $font-size-large
+      .fa
+        display block
+      .row
+        &:not(:first-child)
+          padding 15px 0
+        &:last-child
+          border 0 none
+          padding-bottom 0

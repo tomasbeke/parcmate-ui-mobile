@@ -12,24 +12,23 @@
       .col-xs-6.btn-container
         button.btn.btn-default(ui-turn-off='modal2' type='button') Email
     / Sections
-    .row.receipt-section
+    .row.receipt-section.basic-info
       .col-xs-12.col
         div.date
           strong Nov. 10, 2015
         - for i in (1..4)
           .row
-            col-xs-6
+            .col-xs-6
               span Transaction #:
-            col-xs-6
-              span 1234-5678-90
+            .col-xs-6
+              strong 1234-5678-90
         div.car
           span.sprite.sprite-car-black-big
-          span
-            |Tesla
-            i Models
-            i.color
-            |(Black)
-    .row.receipt-section
+          span.car-type
+            strong.make Tesla
+            span.model Models
+            em.color Black
+    .row.receipt-section.garage-info
       .col-xs-12.col
         .row
           .col-xs-12
@@ -44,30 +43,29 @@
             span 212.555.5555
         .row
           .col-xs-12
+            span.fa.fa-star-o
             a href='' Rate it
-    .row.receipt-section
+    .row.receipt-section.time-in-out
       .col-xs-12.col
         .row
           .col-xs-12
             span.sprite.sprite-duration-icon-black
         .row
-          .col-xs-4
+          .col-xs-6
             span from:
-          .col-xs-4
+          .col-xs-6
             span Nov. 10
-          .col-xs-4
             strong 9:33 pm
         .row
-          .col-xs-4
+          .col-xs-6
             span to:
-          .col-xs-4
+          .col-xs-6
             span Nov. 15
-          .col-xs-4
             strong 9:33 pm
         .row
           .col-xs-12
             strong 2h
-    .row.receipt-section
+    .row.receipt-section.total
       .col-xs-12.col
         - for i in (1..4)
           .row
@@ -75,6 +73,11 @@
               span Label:
             .col-xs-6
               span $20.00
+        .row
+          .col-xs-6
+            strong Total Cost:
+          .col-xs-6
+            strong $20.00
 
 
 div(ui-content-for='modals')
