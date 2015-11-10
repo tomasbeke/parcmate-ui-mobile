@@ -19,8 +19,8 @@
             a.history-tab href='' History
     / Tabs Container
     .row.tabs-container
-      /include reservations/_reservations-tab.slim
-      /include reservations/_favorites-tab.slim
+      include reservations/_reservations-tab.slim
+      include reservations/_favorites-tab.slim
       include reservations/_history-tab.slim
 
 div(ui-content-for='modals')
