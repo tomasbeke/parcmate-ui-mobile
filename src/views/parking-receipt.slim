@@ -6,6 +6,28 @@
           span Parking Receipt
           i.fa.fa-chevron-left.pull-left
 
+    .row.multi-buttons.masthead
+      .col-xs-6.btn-container
+        button.btn.btn-default(ui-turn-off='modal1' type='button') Print
+      .col-xs-6.btn-container
+        button.btn.btn-default(ui-turn-off='modal2' type='button') Email
+    / Sections
+    .row.receipt-section
+      .col-xs-12.col
+        div.date Nov. 10, 2015
+        - for i in (1..4)
+          .row
+            col-xs-6
+              span Transaction #:
+            col-xs-6
+              span 1234-5678-90
+        div.car
+          span.sprite.sprite-car-black-big
+          span
+            |Tesla
+            i Models
+            i.color
+            |(Black)
 
 
 div(ui-content-for='modals')
