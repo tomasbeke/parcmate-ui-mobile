@@ -14,7 +14,8 @@
     / Sections
     .row.receipt-section
       .col-xs-12.col
-        div.date Nov. 10, 2015
+        div.date
+          strong Nov. 10, 2015
         - for i in (1..4)
           .row
             col-xs-6
@@ -28,6 +29,52 @@
             i Models
             i.color
             |(Black)
+    .row.receipt-section
+      .col-xs-12.col
+        .row
+          .col-xs-12
+            span.sprite.sprite-black-parking-pin
+            address
+              strong Icon Parking
+              span 133 E. 61 st
+              span New York, NY, 11223
+        .row
+          .col-xs-12
+            span.sprite.sprite-phone-black
+            span 212.555.5555
+        .row
+          .col-xs-12
+            a href='' Rate it
+    .row.receipt-section
+      .col-xs-12.col
+        .row
+          .col-xs-12
+            span.sprite.sprite-duration-icon-black
+        .row
+          .col-xs-4
+            span from:
+          .col-xs-4
+            span Nov. 10
+          .col-xs-4
+            strong 9:33 pm
+        .row
+          .col-xs-4
+            span to:
+          .col-xs-4
+            span Nov. 15
+          .col-xs-4
+            strong 9:33 pm
+        .row
+          .col-xs-12
+            strong 2h
+    .row.receipt-section
+      .col-xs-12.col
+        - for i in (1..4)
+          .row
+            .col-xs-6
+              span Label:
+            .col-xs-6
+              span $20.00
 
 
 div(ui-content-for='modals')
