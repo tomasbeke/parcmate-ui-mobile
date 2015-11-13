@@ -164,6 +164,8 @@
 // Garage Info Window Overlay
 .garage-info-window
   .container-fluid
+    margin-top 0!important
+    background $white!important
     .row
       display flex
       flex-flow row no-wrap
@@ -195,6 +197,9 @@
         margin 5px 0
       span
         display inline-block
+        padding 0
+        &.sprite
+          margin-right 5px
     .garage-info
       border $gray-border
       color $blue
@@ -214,8 +219,3 @@
               padding-right 5px
               margin-left 0
               border-right 1px solid $blue
-
-// Overwrites for GMap Styles
-.gm-style-iw
-  top 0!important
-  left 0!important
