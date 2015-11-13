@@ -214,13 +214,12 @@ var MapView = (function () {
       controlDiv.style.height = '26px';
       controlDiv.style.width = '54px';
 
-      controlDiv.className = 'sprite sprite-check-in-out'
-
       var zoomin = document.createElement('div');
       zoomin.title = 'Click to zoom in';
       zoomin.style.display = "inline-block"
       zoomin.style.width = '50%';
       zoomin.style.height = '100%';
+      zoomin.className = 'sprite sprite-check-in';
 
       controlDiv.appendChild(zoomin);
 
@@ -229,6 +228,7 @@ var MapView = (function () {
       zoomout.style.display = "inline-block"
       zoomout.style.width = '50%';
       zoomout.style.height = '100%';
+      zoomout.className = 'sprite sprite-check-out';
 
       controlDiv.appendChild(zoomout);
 
