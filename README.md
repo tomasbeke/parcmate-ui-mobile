@@ -30,7 +30,7 @@ Design definitions, BA guidelines, Jira issues to be updated:
 
 ## APIs
 
-API (Google Maps, etc.) to be updated:
+API (Google Maps)
 
 - [Google Maps JS
 API](https://developers.google.com/maps/documentation/javascript/)
@@ -42,7 +42,5 @@ API](https://developers.google.com/maps/documentation/javascript/)
   replace SASS with Stylus in Bootstrap mixins
 - [Bootstrap-sass/Compass](https://github.com/twbs/bootstrap-sass/) used
   for spriting only
-- [Flexbox Grid](http://flexboxgrid.com/) (?)
 - [Nib](http://tj.github.io/nib/) used to extend Stylus mixins
 - Slim - templating
-- [Grunt](http://gruntjs.com/)
