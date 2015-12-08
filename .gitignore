@@ -44,3 +44,7 @@ src/assets/images/sprite
 *.codekit
 .codekit*
 *.html
+
+/node_modules
+/tmp
+/dist

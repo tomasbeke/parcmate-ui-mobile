@@ -1,0 +1,17 @@
+.scrollable-content.find-garage
+  .container
+    .row.customer-greeting
+      .col-xs-12
+        h1
+          span Hello&nbsp;
+          span.customer Customer!
+    .row
+      .col-xs-12.search-container
+        input(id='search-box' class='controls' type='text' placeholder='Search')
+        button.icon.close &times;
+        button.sprite.sprite-search-glass-gray.icon.search
+    /button.btn(ui-turn-on='modal1') modal
+    #map
+    include _garage_controls.slim
+div(ui-content-for='modals')
+  div(ng-include="'modal-filter.html'")
